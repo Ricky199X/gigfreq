@@ -74,14 +74,17 @@ To-Do's:
 Divise Gem - Multiple User Authentication Gem  -> Reach out to Dan Sullivan, research online 
 Polymorphism - Reach out to Lan for reference
 
-
+Í
 Tasks:
 
-1. Softwzare update so that i can install yarn -> DONE
-2. Set up Devise for User + Admin Authentication 
+1. Softwzare update so that i can install yarn - DONE
+2. Set up Devise for User + Admin Authentication - DONE
 3. Rework Models - DONE
 4. Set Up Database + Models 
 5. Migrate Models 
+6. User Sign up - DONE
+7. User Sign In - DONE
+8. User log out - DONE
 
 
 
