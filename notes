@@ -1,0 +1,112 @@
+Concert Tracker:
+
+- App to track concerts a user has gone to/is going to 
+
+- User can find bands playing a show in their city/state, "attend" those shows, and see other users attending the same show
+
+- Bands can use an admin feature to post their upcoming shows, track number of users attending, and see user profiles to connect with their fans 
+
+MODELS:
+
+User - username, email, city, state, password, favorite_band
+Band - name, email, password, website, genre, description
+Show - show_name, venue, city, state, date, rsvps, t.references polymorphic: true
+User Band - user_id, band_id, users_favorite_song
+User Show - user_id, show_id
+Band Show - band_id, show_id
+
+KEY FEATURES:
+
+User:
+
+1. Track concerts they’ve attended
+2. Can “follow” bands that they enjoy
+3. See other users attending that same show
+
+Band:
+1. Add shows to their schedule
+2. “Find a Fan” -> shows them profiles of fans at any given show to connect with
+3. Can easily track metrics of show attendance + cities they are most popular in
+
+User Flow
+
+Layout: Home <-> Shows <-> My Artists (stretch goal) <-> Profile <-> Log Out
+
+User fills out form to sign up - can either fill out the form or use Google/Facebook to sign up 
+Upon successful sign up, will be logged to and redirected to home page (Menu layout: “Home”, “Upcoming Shows”, “Profile”, “Log Out”
+	
+Home Page: will display a welcome message, condensed summary of user’s concerts attended in the past, section of upcoming shows with most rsvps which user can “quick add” to their schedule
+Shows: Will feature a container with the upcoming schedule of shows based on their state, user can click on the link to open up the show details, then “attend” the show (similar to rails amusement park). Stretch goal here: implementing a search function by artist name.
+My artists: User can keep an index of their favorite artists here, easily access the artists show page 
+Profile: User can complete a form to edit their profile -> changes will be persisted to the database
+Log out: destroys the session 
+
+Band Flow
+
+Layout: Home <-> Shows <-> Metrics (stretch goal) <-> Profile <-> Log Out
+
+Band completes the band form with their information - do not want to allow Google/Facebook sign up here 
+Home page: display a welcome message, total number of fans on platform, and condensed summary of band's concerts played in the past, section of upcoming shows + total number of RSVP’s to those shows. 
+Your Shows: Index page of Upcoming + Previous Shows. If a band clicks on the details of a past or upcoming show - is taken to a summary of the shows details + list of platform users that attending/that attended it -> can click a user’s details to see their basic fan information. Band can post or delete upcoming shows on this page.
+Metrics: Data related to fan engagement + stats of total attendance numbers 
+Profile: Band can update their profile here
+Logout: destroys the session 
+
+QUESTIONS:
+
+1. Will there be a need for an additional join table specifically for venue or could that just be a nested show route? (I think just could be a nested route)
+
+2. Should the band signup feature a different form than the user sign up because a band has slightly different attributes? Or should the there be an “are you an admin?” checkbox on the main signup form?
+
+
+- For Sign up/sign in -> could do a dropdown for a band or a user 
+- Needs to be a lot of helpers and partials: whatever is unique to a specific model needs to be modularized
+
+If user is a user -> show the user buttons, if the user is a band -> show the band buttons
+
+OR
+
+Probably will need an account table -> One will either need to be User or Band
+
+User shows -> How man 
+
+To-Do's:
+Divise Gem - Multiple User Authentication Gem  -> Reach out to Dan Sullivan, research online 
+Polymorphism - Reach out to Lan for reference
+
+
+Tasks:
+
+1. Softwzare update so that i can install yarn -> DONE
+2. Set up Devise for User + Admin Authentication 
+3. Rework Models - DONE
+4. Set Up Database + Models 
+5. Migrate Models 
+
+
+
+Band
+has_many :shows
+has_many :user_bands
+has_many users through user_bands
+
+Show
+belongs_to band
+has_many :user_shows
+has_many users through user_shows
+
+User 
+has_many :user_shows
+has_many User_bands
+has_many shows through user_shows
+has_many bands through user_bands
+
+User Show
+belongs_to user
+belongs_to show
+
+user band
+belongs_to user
+belongs_to band
+
+
