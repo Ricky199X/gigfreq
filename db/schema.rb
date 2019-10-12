@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_12_192427) do
+ActiveRecord::Schema.define(version: 2019_10_12_230617) do
 
   create_table "band_shows", force: :cascade do |t|
     t.integer "band_id"
     t.integer "show_id"
+  end
+
+  create_table "bands", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "shows", force: :cascade do |t|
@@ -39,8 +44,8 @@ ActiveRecord::Schema.define(version: 2019_10_12_192427) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
