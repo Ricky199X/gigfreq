@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
+    # this is so we can pass other user params aside from email and password
     before_action :configure_permitted_parameters, if: :devise_controller?
-
 
     def home
         

@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_11_230653) do
+ActiveRecord::Schema.define(version: 2019_10_12_192427) do
+
+  create_table "band_shows", force: :cascade do |t|
+    t.integer "band_id"
+    t.integer "show_id"
+  end
+
+  create_table "shows", force: :cascade do |t|
+    t.string "name"
+    t.string "venue"
+    t.string "city"
+    t.string "state"
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_bands", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "band_id"
+  end
+
+  create_table "user_shows", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "show_id"
+    t.integer "tickets_bought"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

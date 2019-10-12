@@ -10,9 +10,9 @@ MODELS:
 
 User - username, email, city, state, password, favorite_band
 Band - name, email, password, website, genre, description
-Show - show_name, venue, city, state, date, rsvps, t.references polymorphic: true
-User Band - user_id, band_id, users_favorite_song
-User Show - user_id, show_id
+Show - show_name, venue, city, state, date
+User Band - user_id, band_id
+User Show - user_id, show_id, tickets_bought
 Band Show - band_id, show_id
 
 KEY FEATURES:
