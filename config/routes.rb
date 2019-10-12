@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   
-  devise_for :bands
+  resources :bands
   resources :shows
   devise_for :users
   root to: 'application#home'
