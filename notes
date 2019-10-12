@@ -13,11 +13,11 @@ Band - name, email, password, website, genre, description
 Show - show_name, venue, city, state, date
 User Band - user_id, band_id
 User Show - user_id, show_id, tickets_bought
-Band Show - band_id, show_id
+Band Show - band_id, show_idhgjk
 
 KEY FEATURES:
 
-User:
+User:rth
 
 1. Track concerts they’ve attended
 2. Can “follow” bands that they enjoy
