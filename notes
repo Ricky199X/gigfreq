@@ -72,14 +72,13 @@ User shows -> How man
 
 To-Do's:
 Divise Gem - Multiple User Authentication Gem  -> Reach out to Dan Sullivan, research online 
-Polymorphism - Reach out to Lan for reference
 
 Tasks:
 
-1.
-2. Set up Devise for User + Admin Authentication - User done
+1. Admin Authentication with Devise
+2. Admin sign up form 
 3. Seed Up Database
-4. Models - Band, Show
+
 
 
 
@@ -91,6 +90,7 @@ Migrate Models - DONE
 User Sign up - DONE
 User Sign In - DONE
 User log out - DONE
+Migrations for all models except for Band - DONE
 
 
 

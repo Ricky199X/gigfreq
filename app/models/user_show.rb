@@ -1,5 +1,5 @@
-class UserShow < ApplicationRecord
-    belongs_to :user
-    belongs_to :show
+# class UserShow < ApplicationRecord
+#     belongs_to :user
+#     belongs_to :show
     
-end
+# end

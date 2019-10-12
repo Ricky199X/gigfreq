@@ -1,4 +1,4 @@
-class UserBand < ApplicationRecord
-   belongs_to :user
-   belongs_to :band
-end
+# class UserBand < ApplicationRecord
+#    belongs_to :user
+#    belongs_to :band
+# end
