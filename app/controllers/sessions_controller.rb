@@ -1,19 +1,22 @@
 class SessionsController < ApplicationController
 
-    def new
-     end
-  
-     def create
-        @user = User.find_by(name: params[:user][:name])
-  
-        if !@user.nil? && @user.authenticate(params[:user][:password])
-           session[:user_id] = @user.id
-           redirect_to user_path(@user)
-        end
+    def login
+
     end
-  
-    def destroy
-     session.clear
-     redirect_to root_path
+
+    def create
+        if @user = User.find_by(email: params[:user][:email])
+            if @user.authenticate(params[:user][:password])
+                log_in(@user)
+                flash[:success] = "Welcome back, #{@user.name}"
+                redirect_to dashboard_path
+            else
+                flash[:danger] = "Improper login information entered."
+                redirect_to login_path
+            end
+        else
+            flash[:danger] = "Improper login information entered."
+            redirect_to login_path
+        end
     end
 end
