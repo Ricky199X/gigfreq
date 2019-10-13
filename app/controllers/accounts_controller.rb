@@ -7,7 +7,7 @@ class AccountsController < ApplicationController
     def create
         @account = Account.create(account_params)
         # binding.pry
-        if params[:band] == 1
+        if params[:account][:band] == "1"
             redirect_to new_band_path
         else
             redirect_to new_user_path
