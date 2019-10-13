@@ -38,6 +38,11 @@ class BandsController < ApplicationController
         end
     end
 
+    def destroy
+        session.clear
+        redirect_to '/'
+    end
+
     private
 
     def band_params
