@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   resources :bands do
     resources :shows
   end
-  
+
   resources :shows
-  devise_for :users
 
   # get '/bands/sign_up' to: 'bands#new'
  
