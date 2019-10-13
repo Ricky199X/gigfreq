@@ -6,6 +6,18 @@ class UsersController < ApplicationController
 
     def create 
         @user = User.create(user_params)
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
+    end
+
+    def show
+        logged_in?
+        @user = User.find(params[:id])
+    end
+
+    def destroy
+        session.clear
+        redirect_to '/'
     end
 
 
