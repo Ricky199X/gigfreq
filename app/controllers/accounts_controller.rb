@@ -5,12 +5,19 @@ class AccountsController < ApplicationController
     end
 
     def create
-        @account = Account.create(account_params)
+        @account = Account.new(account_params)
         # binding.pry
-        if params[:account][:band] == "1"
-            redirect_to new_band_path
+        if @account.save
+            log_in(@account)
+            if params[:account][:band] == "1"
+                session[:is_band] = true
+                redirect_to new_band_path
+            else
+                session[:is_band] = false
+                redirect_to new_user_path
+            end
         else
-            redirect_to new_user_path
+            render :new
         end
     end
 

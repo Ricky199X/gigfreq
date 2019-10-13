@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-
+    before_action :verify_info_set, except: [:new, :create]
     def index
         @bands = Band.all
     end
@@ -9,7 +9,14 @@ class BandsController < ApplicationController
     end
 
     def create
-        @band = Band.create(band_params)
+        @band = Band.new(band_params)
+        @band.account = Account.find(session[:account_id])
+        if @band.save
+            redirect_to band_path(@band)
+        else
+            # MAKE SURE YOU RENDER ERRORS IN YOUR BAND NEW VIEW
+            render :new
+        end
     end
 
     def show

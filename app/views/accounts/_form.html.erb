@@ -7,7 +7,7 @@
     <%= f.text_field :username %>
   </div>
 
-  <div class="field">
+  <div class=<%= field_class(@account, :email) %>>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
