@@ -22,9 +22,4 @@ class ApplicationController < ActionController::Base
         @current_band ||= Band.find(session[:band_id]) if session[:band_id]
     end
 
-    protected 
-
-    def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :city, :state, :favorite_band])
-    end
 end
