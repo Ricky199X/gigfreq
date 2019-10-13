@@ -128,7 +128,7 @@ s = Show.create(name: "Tranquility Base Hotel and Casino Tour", venue: "Paradise
 ### TODO 
 
 1. Make a Accounts table in Migrations - DONE
-2. Give it password_digest, username -- > validate uniqueness of username
+2. Give it password_digest, username -- > validate uniqueness of username - DONE
 3. Be polymorphic. Belongs to an "accountable", which will be User or Band
 4. Sign up will be done through account, and give a radiobutton on signup to indicate if its a band or a user
 6. Redirect to new user or new band page 
