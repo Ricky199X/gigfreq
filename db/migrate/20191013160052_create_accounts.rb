@@ -4,6 +4,7 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :email
       t.string :password_digest
+      t.boolean :is_band?, default: false
       t.references :accountable, polymorphic: true
     end
   end
