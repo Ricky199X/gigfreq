@@ -17,7 +17,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        logged_in?
         @user = User.find(params[:id])
     end
 
