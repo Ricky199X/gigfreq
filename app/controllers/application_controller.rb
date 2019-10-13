@@ -39,10 +39,4 @@ class ApplicationController < ActionController::Base
     end
 
 
-
-
-    # def current_band
-    #     @current_band ||= Band.find(session[:band_id]) if session[:band_id]
-    # end
-
 end
