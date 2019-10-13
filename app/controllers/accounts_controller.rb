@@ -5,7 +5,9 @@ class AccountsController < ApplicationController
     end
 
     def create
+        # if checkbox is checked, account_type = band
         @account = Account.create(account_params)
+        
     end
 
 
