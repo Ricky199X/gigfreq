@@ -1,3 +1,39 @@
-<h2>Please choose a sign up:</h2>
-<li><%= link_to "User Sign Up", new_user_path %></li>
-<li><%= link_to "Band Sign Up", new_band_path %></li>
+<h2>Welcome to GigFreq! Please create an account here!</h2>
+
+<%= form_for @account do |f| %>
+
+  <div class= "field">
+    <%= f.label :username %><br/>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br/>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+
+<% end %>
+
+<% if @account.errors.any? %>
+  <%@account.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <%end%>
+<%end%>
+
