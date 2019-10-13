@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   # validates :username, uniqueness: true
-  validates :password, uniqueness: true
+  # validates :password, uniqueness: true
 
   has_many :user_shows
   has_many :user_bands
