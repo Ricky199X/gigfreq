@@ -1,0 +1,29 @@
+<h2>Enter an upcoming gig here!</h2>
+
+<%= form_for @show do |f| %>
+
+  <div class= "field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :venue %><br />
+    <%= f.text_field :venue%>
+  </div>
+
+   <div class= "field">
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class= "field">
+    <%= f.label :date %><br/>
+    <%= f.text_field :date%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Gig" %>
+  </div>
+
+<% end %>
