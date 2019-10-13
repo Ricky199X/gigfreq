@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     def user_params
         # byebug
-        params.require(:user).permit(:username, :email, :city, :state, :password, :favorite_band)
+        params.require(:user).permit(:city, :state, :favorite_band)
     end 
 
 end
