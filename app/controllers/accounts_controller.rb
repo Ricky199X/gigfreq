@@ -6,8 +6,8 @@ class AccountsController < ApplicationController
 
     def create
         @account = Account.create(account_params)
-        binding.pry
-        if params[:'is_band?'] == true
+        # binding.pry
+        if params[:band] == 1
             redirect_to new_band_path
         else
             redirect_to new_user_path
@@ -18,7 +18,7 @@ class AccountsController < ApplicationController
     private
 
     def account_params
-        params.require(:account).permit(:username, :email, :password, :password_confirmation, :'is_band?')
+        params.require(:account).permit(:username, :email, :password, :password_confirmation, :band)
     end
     
 end

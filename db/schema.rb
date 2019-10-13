@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_10_13_160052) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.boolean "is_band?", default: false
+    t.boolean "band", default: false
     t.string "accountable_type"
     t.integer "accountable_id"
     t.index ["accountable_type", "accountable_id"], name: "index_accounts_on_accountable_type_and_accountable_id"
