@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
     end
 
     def create
-        if @user = User.find_by(email: params[:user][:email])
-            if @user.authenticate(params[:user][:password])
+        if @user = User.account.find_by(email: params[:user][:email])
+            if @user.account.authenticate(params[:user][:password])
                 log_in(@user)
-                flash[:success] = "Welcome back, #{@user.name}"
+                flash[:success] = "Welcome back, #{@user.account.username}"
                 redirect_to dashboard_path
             else
                 flash[:danger] = "Improper login information entered."
