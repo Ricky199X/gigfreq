@@ -77,9 +77,9 @@ Test User account: rickyrojas19@gmail.com -> hahaha
 Test Band Account: arcticmonkeys@gmail.com -> monkeys
 
 Tasks:
-1. Admin Authentication with Devise
-2. Admin sign up form 
-3. Seed Up Database
+1. New Sessions Controller
+2. Band Login
+
 
 
 
@@ -92,6 +92,7 @@ User Sign up - DONE
 User Sign In - DONE
 User log out - DONE
 Migrations for all models except for Band - DONE
+
 
 
 
