@@ -5,17 +5,14 @@ class UsersController < ApplicationController
     end 
 
     def create 
-        @user = User.create(sign_up_params)
+        @user = User.create(user_params)
     end
 
     private
 
-    def sign_up_params
+    def user_params
         # byebug
-        params.require(:user).permit(:email :password, :password_confirmation)
+        params.require(:user).permit(:username, :email, :city, :state, :password, :favorite_band)
     end 
 
-    def account_update_params
-        params.require(:user).permit(:email, :password, :password_confirmation)
-    end 
 end
