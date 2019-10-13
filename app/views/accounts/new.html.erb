@@ -1,8 +1,3 @@
 <%= render 'accounts/form'%>
 
 
-<% if @account.errors.any? %>
-    <% @account.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-    <% end %>
-<% end %>
