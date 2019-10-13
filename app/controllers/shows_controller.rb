@@ -26,7 +26,7 @@ class ShowsController < ApplicationController
         if @show.save
             redirect_to edit_show_path(@show)
         else
-            flash[:alert] = "Show Profile not saved"
+            flash[:alert] = "Show not saved!"
         end
     end
 
