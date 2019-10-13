@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_10_12_230617) do
   end
 
   create_table "shows", force: :cascade do |t|
+    t.integer "band_id"
     t.string "name"
     t.string "venue"
     t.string "city"

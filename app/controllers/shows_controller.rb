@@ -33,6 +33,6 @@ class ShowsController < ApplicationController
     private
 
     def show_params
-        params.require(:show).permit(:name, :venue, :city, :state, :date)
+        params.require(:show).permit(:name, :venue, :city, :state, :date, :band_id)
     end
 end

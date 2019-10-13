@@ -120,3 +120,4 @@ belongs_to user
 belongs_to band
 
 
+s = Show.create(name: "Tranquility Base Hotel and Casino Tour", venue: "Paradise rock club", city: "Boston", state: "Massachusetts", date: "1/12/2020")
