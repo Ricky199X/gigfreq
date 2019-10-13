@@ -8,11 +8,12 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
     end
 
+
     private
 
     def user_params
         # byebug
-        params.require(:user).permit(:username, :email, :city, :state, :password, :favorite_band)
+        params.require(:user).permit(:username, :email, :city, :state, :password, :password_confirmation, :favorite_band)
     end 
 
 end
