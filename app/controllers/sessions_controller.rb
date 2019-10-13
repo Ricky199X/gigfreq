@@ -19,4 +19,9 @@ class SessionsController < ApplicationController
             redirect_to login_path
         end
     end
+
+    def logout
+        session.delete(:account_id)
+        redirect_to root_path
+    end
 end
