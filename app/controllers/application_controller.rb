@@ -2,14 +2,20 @@ class ApplicationController < ActionController::Base
 
     helper_method :current_user, :logged_in
 
-    def logged_in?
-        redirect_to '/' if !current_user
-    end
+    
 
     private
 
     def log_in(acct)
         session[:account_id] = acct.id
+    end
+
+    def logged_in?
+        !!session[:account_id]
+    end
+
+    def current_user
+        User.find_by(id: session[:account_id])
     end
 
     def log_out
