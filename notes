@@ -17,7 +17,7 @@ Band Show - band_id, show_idhgjk
 
 KEY FEATURES:
 
-User:rth
+User:
 
 1. Track concerts they’ve attended
 2. Can “follow” bands that they enjoy
@@ -57,10 +57,6 @@ QUESTIONS:
 1. Will there be a need for an additional join table specifically for venue or could that just be a nested show route? (I think just could be a nested route)
 
 2. Should the band signup feature a different form than the user sign up because a band has slightly different attributes? Or should the there be an “are you an admin?” checkbox on the main signup form?
-
-
-- For Sign up/sign in -> could do a dropdown for a band or a user 
-- Needs to be a lot of helpers and partials: whatever is unique to a specific model needs to be modularized
 
 If user is a user -> show the user buttons, if the user is a band -> show the band buttons
 

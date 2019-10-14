@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
     end
 
     def create
-        if @user = User.account.find_by(email: params[:user][:email])
+        if @user = User.account.find_by(email: params[:email])
+            binding.pry
             if @user.account.authenticate(params[:user][:password])
                 log_in(@user)
                 flash[:success] = "Welcome back, #{@user.account.username}"
