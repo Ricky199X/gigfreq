@@ -12,6 +12,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         @user.account = Account.find(session[:account_id])
         if @user.save
+            log_in(@user)
             redirect_to user_path(@user)
         else
             # MAKE SURE YOU RENDER ERRORS IN YOUR BAND NEW VIEW
