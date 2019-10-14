@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
-
+    # handles differentiation between a band or user account
+    # sends the user to the correct form to complete sign up
     def new
         @account = Account.new
     end
