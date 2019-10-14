@@ -7,8 +7,10 @@ class SessionsController < ApplicationController
 
     def create
         @account = Account.find_by(email: params[:email])
-        binding.pry
-        if !@account.nil? && @account.authenticate(params[:account][:password])
+        if @account = nil
+            render :new
+        # binding.pry
+        else !@account.nil? && @account.authenticate(params[:account][:password])
             log_in(@account)
             # if accountable_type == "Band", redirect to band path
             if @account.accountable_type == "Band"
@@ -16,7 +18,7 @@ class SessionsController < ApplicationController
             # else, redirect to user_path
             else 
                 redirect_to user_path
-            end
+            end 
         end
     end
 
