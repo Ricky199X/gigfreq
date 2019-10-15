@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
 
     def create 
         @account = Account.find_by(email: params[:email])
-        byebug
-        if !@account.nil? && @account.authenticate(params[:account][:password])
+        
+        if !@account.nil? && @account.authenticate(params[:password])
                 log_in(@account)
                 flash[:success] = "Welcome Back, #{@account.username}!"
             if @account.accountable_type == "Band"
-                redirect_to band_path
+                redirect_to band_path(@account.accountable.id)
             else 
-                redirect_to user_path
+                redirect_to user_path(@account.accountable.id)
             end 
         else 
         # NOW handle the account being nil or not validated

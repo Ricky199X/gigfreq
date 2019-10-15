@@ -1,5 +1,5 @@
 <h1>Please enter your login information below!</h1>
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'get'}) do %>
   
   <div class="form">
   Email: <%= text_field_tag :email%> <br/><br/>
@@ -9,6 +9,6 @@
   <div class = "actions">
   <%= submit_tag "Log In"%><br/>
   </div>
-  
+
 <% end %>
  
