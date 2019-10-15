@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
         session[:account_id] = acct.id
     end
 
-    def logged_in?
+    def logged_in
         !!session[:account_id]
     end
 

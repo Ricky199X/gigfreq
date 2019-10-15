@@ -64,20 +64,13 @@ OR
 
 Probably will need an account table -> One will either need to be User or Band
 
-User shows -> How man 
 
-To-Do's:
-Divise Gem - Multiple User Authentication Gem  -> Reach out to Dan Sullivan, research online 
-
-Test User account: rickyrojas19@gmail.com -> hahaha
-Test Band Account: arcticmonkeys@gmail.com -> monkeys
+Test User account: user@user.com -> user
+Test Band Account: interpol@gmail.com -> interpol
 
 Tasks:
-1. Sessions Controller - Create Action
-2. Sessions Controller - Logout Action
-3. Test for logging in User
-4. Test for logging in Band
-
+1. Need Nav Bar based on User or Band
+2. Make any additional views based on nav bar items
 
 
 
@@ -90,15 +83,19 @@ User Sign up - DONE
 User Sign In - DONE
 User log out - DONE
 Migrations for all models except for Band - DONE
-1. Make a Accounts table in Migrations - DONE
-2. Give it password_digest, username -- > validate uniqueness of username - DONE
-3. Be polymorphic. Belongs to an "accountable", which will be User or Band - DONE
-4. Sign up will be done through account, and give a radiobutton on signup to indicate if its a band or a user - DONE
-6. Redirect to new user or new band page - DONE
-5. Take out username and password_digest and has_secure_password in User + Band Models - DONE
-6. session[:acccount_id] - DONE
-7. Helpers will get the account from the session[:account_id] and check if the accoutable is a user or a band  - DONE
-8. acc.accoutable_type <--- "User" "Band" - DONE
+Make a Accounts table in Migrations - DONE
+Give it password_digest, username -- > validate uniqueness of username - DONE
+Be polymorphic. Belongs to an "accountable", which will be User or Band - DONE
+Sign up will be done through account, and give a radiobutton on signup to indicate if its a band or a user - DONE
+Redirect to new user or new band page - DONE
+Take out username and password_digest and has_secure_password in User + Band Models - DONE
+session[:acccount_id] - DONE
+Helpers will get the account from the session[:account_id] and check if the accoutable is a user or a band  - DONE
+acc.accoutable_type <--- "User" "Band" - DONE
+Sessions Controller - Create Action - DONE
+Sessions Controller - Logout Action - DONE
+Test for logging in User - DONE
+Test for logging in Band - DONE
 
 
 
@@ -126,12 +123,5 @@ belongs_to show
 user band
 belongs_to user
 belongs_to band
-
-
-s = Show.create(name: "Tranquility Base Hotel and Casino Tour", venue: "Paradise rock club", city: "Boston", state: "Massachusetts", date: "1/12/2020")
-
-
-
-### TODO 
 
 

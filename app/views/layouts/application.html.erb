@@ -11,11 +11,19 @@
 
   <body>
     <%= render 'layouts/alerts' %>
+
+    <% if logged_in %>
+      <%= render 'layouts/logged_in_navbar'%>
+    <%else%>
     <%= render 'layouts/logged_out_navbar'%>
+    <%end%>
+    
+    
+    
+    <%= yield %>
     <% flash.each do |k,v| %>
       <div><%= v %></div>
     <%end%>
-    <%= yield %>
     
   </body>
 </html>
