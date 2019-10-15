@@ -12,10 +12,10 @@
   <body>
     <%= render 'layouts/alerts' %>
 
-    <% if logged_in %>
-      <%= render 'layouts/logged_in_navbar'%>
+    <% if !current_user %>
+      <%= render 'layouts/logged_out_navbar'%>
     <%else%>
-    <%= render 'layouts/logged_out_navbar'%>
+      <%= render 'layouts/logged_in_navbar'%>
     <%end%>
     
     
