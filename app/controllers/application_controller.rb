@@ -19,7 +19,8 @@ class ApplicationController < ActionController::Base
     end
 
     def log_out
-        session.clear
+        session.delete(:account_id)
+        redirect_to root_path
     end
 
     def verify_info_set
