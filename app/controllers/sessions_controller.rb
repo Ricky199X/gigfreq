@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     def create 
         @account = Account.find_by(email: params[:email])
-        # byebug
+        byebug
         if !@account.nil? && @account.authenticate(params[:account][:password])
                 log_in(@account)
                 flash[:success] = "Welcome Back, #{@account.username}!"
