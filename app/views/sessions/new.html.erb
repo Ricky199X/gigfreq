@@ -1,19 +1,9 @@
 <h1>Please enter your login information below!</h1>
-<%= form_for login_path do |f| %>
-
-  <div class="email">
-    <%= f.label :email, "Email:" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <%= text_field_tag :email, "Email"%>
+  
+  <div class = "actionsß">
+  <%= submit_tag "Log In"%>
   </div>
-
-  <div class="field">
-    <%= f.label :password, "Password:" %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Login" %>
-  </div>
-
 <% end %>
-
+ 
