@@ -1,9 +1,14 @@
 <h1>Please enter your login information below!</h1>
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <%= text_field_tag :email, "Email"%>
   
-  <div class = "actionsß">
-  <%= submit_tag "Log In"%>
+  <div class="form">
+  Email: <%= text_field_tag :email%> <br/><br/>
+  Password: <%= password_field_tag %>
   </div>
+  
+  <div class = "actions">
+  <%= submit_tag "Log In"%><br/>
+  </div>
+  
 <% end %>
  
