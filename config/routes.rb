@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :accounts
   resources :users do 
-    resources :shows, except: [:create, :update, :destroy]
+    resources :shows, only: [:show, :index]
   end
 
   resources :bands do

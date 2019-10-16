@@ -13,6 +13,7 @@ class ShowsController < ApplicationController
 
     def show
         @show = Show.find(params[:id])
+        redirect_to band_shows_path
     end
 
     def edit

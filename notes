@@ -69,7 +69,8 @@ Test User account: user@user.com -> user
 Test Band Account: interpol@gmail.com -> interpol
 
 Tasks:
-1. Need Nav Bar based on User or Band - rendering, but erroring out (mixing up the )
+
+1. Need Nav Bar based on User or Band - rendering, but erroring out (mixing up the routes)
 2. Make any additional views based on nav bar items
 
 
