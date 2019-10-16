@@ -126,3 +126,4 @@ belongs_to user
 belongs_to band
 
 
+s = Show.create(name: "antics", venue: "the roxy", city: "los angeles", state: "california", date: "10/20/2019")
