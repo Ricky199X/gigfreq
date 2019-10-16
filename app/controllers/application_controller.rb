@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
     def log_out
         session.delete(:account_id)
-        redirect_to root_path
+        render '/'
     end
 
     def verify_info_set

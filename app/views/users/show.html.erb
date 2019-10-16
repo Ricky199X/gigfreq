@@ -1,4 +1,6 @@
-<%= flash[:alert] if flash[:alert] %>
+<header>
+   <%= render 'layouts/usernav'%>
+</header>
 
 <h1>Welcome, <%=@user.account.username%>!</h1>
 

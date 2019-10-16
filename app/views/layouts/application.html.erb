@@ -10,20 +10,23 @@
   </head>
 
   <body>
-    <%= render 'layouts/alerts' %>
 
-    <% if !current_user %>
-      <%= render 'layouts/logged_out_navbar'%>
-    <%else%>
-      <%= render 'layouts/logged_in_navbar'%>
-    <%end%>
-    
-    
-    
-    <%= yield %>
-    <% flash.each do |k,v| %>
+   <% flash.each do |k,v| %>
       <div><%= v %></div>
     <%end%>
+    
+    <header>
+      <% if !current_user %>
+        <%= render 'layouts/logged_out_navbar'%>
+      <%else%>
+        <%= render 'layouts/logged_in_navbar'%>
+      <%end%>
+    </header>
+
+    
+    <%= yield %>
+
+
     
   </body>
 </html>
