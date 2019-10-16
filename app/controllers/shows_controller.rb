@@ -9,11 +9,12 @@ class ShowsController < ApplicationController
 
     def create
         @show = Show.create(show_params)
+        redirect_to show_path(@show)
     end
 
     def show
         @show = Show.find(params[:id])
-        redirect_to band_shows_path
+
     end
 
     def edit
