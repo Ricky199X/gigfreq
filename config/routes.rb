@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   
   resources :accounts
   resources :users do 
-    resources :shows
+    resources :shows, except: [:create, :update, :destroy]
   end
 
   resources :bands do
     resources :shows
   end
-  
+
   resources :shows
   
   get "login" => "sessions#new", as: "login"

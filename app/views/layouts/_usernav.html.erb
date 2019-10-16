@@ -1,4 +1,4 @@
 <%= link_to "All Shows", shows_path %>
-<%= link_to "Your Shows", user_shows_path%>
-<%= link_to "Your Profile", user_path%>
+<%= link_to "Your Shows", user_show_path(@user)%>
+<%= link_to "Your Profile", user_path(@user)%>
 <%= link_to "Log Out", logout_path%>

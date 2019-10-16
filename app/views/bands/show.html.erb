@@ -1,5 +1,9 @@
 <%= flash[:alert] if flash[:alert] %>
 
+<header>
+   <%= render 'layouts/bandnav'%>
+</header>
+
 <h1>Welcome, <%=@band.account.username%>!</h1>
 
 <h2>See your upcoming shows below:</h2>
