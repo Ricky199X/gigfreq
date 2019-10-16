@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   
   resources :accounts
-  resources :users
+  resources :users do 
+    resources :shows
+  end
+
   resources :bands do
     resources :shows
   end
+  
   resources :shows
   
   get "login" => "sessions#new", as: "login"
