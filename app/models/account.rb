@@ -5,5 +5,9 @@ class Account < ApplicationRecord
     validates :username, uniqueness: true
     validates :email, uniqueness: true
 
+
+    def info
+        self.attributes.each {|k,v| puts v}
+    end
     
 end 
