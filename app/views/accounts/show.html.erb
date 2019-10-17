@@ -1,0 +1,7 @@
+<h1>Your Account Info:</h1>
+
+<% if current_user %>
+    <% current_user.accountable.each do |attr| %>
+        <%= attr %>
+    <%end %>
+<%end%>
