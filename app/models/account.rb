@@ -7,7 +7,7 @@ class Account < ApplicationRecord
 
 
     def info
-        self.attributes.each {|k,v| puts v}
+        self.attributes
     end
     
 end 
