@@ -1,6 +1,4 @@
 class Band < ApplicationRecord
-
-    validates :band_id, presence: true
     
     has_one :account, as: :accountable
     has_many :band_shows

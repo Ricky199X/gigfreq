@@ -70,8 +70,8 @@ Test Band Account: interpol@interpol.com -> interpol
 
 Tasks:
 
-1. Need Nav Bar based on User or Band - rendering, but erroring out (mixing up the routes)
-2. Make any additional views based on nav bar items
+1. 
+2. Make any additional views based on nav bar items 
 
 
 
@@ -97,6 +97,7 @@ Sessions Controller - Create Action - DONE
 Sessions Controller - Logout Action - DONE
 Test for logging in User - DONE
 Test for logging in Band - DONE
+ Need Nav Bar based on User or Band - rendering, but erroring out (mixing up the routes) - DONE
 
 
 
@@ -127,3 +128,4 @@ belongs_to band
 
 
 s = Show.create(name: "antics", venue: "the roxy", city: "los angeles", state: "california", date: "10/20/2019")
+b = Band.new(name: yeah )
