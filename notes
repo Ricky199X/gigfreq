@@ -68,15 +68,11 @@ Probably will need an account table -> One will either need to be User or Band
 Test User account: user@user.com -> user
 Test Band Account: interpol@interpol.com -> interpol
 
-Tasks:
+Tasks: 
 
-1. BAND: Need to add new show from the browser + have it persist to the database
-    Current Issues: 
-    1. show persists without a band_id -> is it because the band_id is a required attribute and I'm not passing it in during the form?
-
-2. Once band adds show, needs to redirect back to the band_shows path 
-3. BAND: Need to build out Your Profile view - show basic band information in a container 
-4. Band profile view needs to have link to Edit Profile
+1. Once band adds show, needs to redirect back to the band_shows path 
+2. BAND: Need to build out Your Profile view - show basic band information in a container 
+3. Band profile view needs to have link to Edit Profile
 
 
 
@@ -105,6 +101,7 @@ Test for logging in User - DONE
 Test for logging in Band - DONE
  Need Nav Bar based on User or Band - rendering, but erroring out (mixing up the routes) - DONE
 Show persisting to database with datte now
+BAND: Need to add new show from the browser + have it persist to the database - DOONE
 
 
 

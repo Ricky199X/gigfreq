@@ -26,7 +26,7 @@ class ShowsController < ApplicationController
         @show.band = @band
 
         if @show.save 
-            redirect_to band_show_path(@show)
+            redirect_to band_shows_path(@show)
         else 
             render :new
         end
