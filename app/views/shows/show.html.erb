@@ -12,7 +12,11 @@
    <% if current_user.accountable_type == "Band" %>
       <%= link_to "Edit Show", edit_show_path(current_user) %>
    <%else%>
-      <%= link_to "Attend Show!", user_shows_path(current_user)%>
+      <%= form_tag '/shows' do %>
+      <%= hidden_field_tag 'show[show_id]', @show.id %>
+      <%= hidden_field_tag 'show[user_id]', current_user.id %>
+      <%= submit_tag "Attend This Show!" %>
+      <%end%>
    <%end%>
 
    
