@@ -4,9 +4,8 @@ class ShowsController < ApplicationController
     end
 
     def new
-
         if !session[:is_band]
-            #flash message you're not a band
+            flash[:danger] = "You're not a band!"
             redirect_to user_path(current_user)
         end
         # add show errors to view
@@ -19,16 +18,18 @@ class ShowsController < ApplicationController
     def create
         #verify that band id is same as current band 
         # make sure person logged in is band
-    
-        
         @show = Show.new(show_params)
-        @band = Band.find(params[:band_id])
-        @show.band = @band
 
-        if @show.save 
-            redirect_to band_shows_path(@show)
-        else 
-            render :new
+        if current_user.accountable_type == "Band"
+            @band = Band.find(params[:band_id])
+            @show.band = @band
+            if @show.save 
+                redirect_to band_shows_path(@show)
+            else 
+                render :new
+            end
+        else
+            @show.users << @user 
         end
     end
 
