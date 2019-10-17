@@ -9,5 +9,10 @@ class Band < ApplicationRecord
     def name
         self.account.username
     end
+
+    def shows
+        # needs to find all shows where band_id == self.id
+        Show.select {|gig| gig.band_id == self.id}
+    end
     
 end
