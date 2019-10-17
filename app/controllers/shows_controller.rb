@@ -39,7 +39,7 @@ class ShowsController < ApplicationController
     end
 
     def edit
-        @show = Show.find_by(id: params[:id])
+        @show = Show.find(id: params[:id])
     end
 
     def update
