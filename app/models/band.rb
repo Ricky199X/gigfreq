@@ -14,5 +14,9 @@ class Band < ApplicationRecord
         # needs to find all shows where band_id == self.id
         Show.select {|gig| gig.band_id == self.id}
     end
+
+    def info
+        
+    end
     
 end
