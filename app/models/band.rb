@@ -15,8 +15,6 @@ class Band < ApplicationRecord
         Show.select {|gig| gig.band_id == self.id}
     end
 
-    def info
-        
-    end
+
     
 end
