@@ -1,10 +1,18 @@
 <h1>Your Account Info:</h1>
 
-<p>Name: <%=current_user.username %><p>
-<p>Website: <%=current_user.accountable.website %></p>
-<p>Email Address: <%= current_user.email %></p>
-<p>Genre: <%= current_user.accountable.genre %></p>
-<p>Description:<%= current_user.accountable.description%></p>
+<% if current_user.accountable_type == "Band" %>
+    <p>Name: <%=current_user.username %><p>
+    <p>Website: <%=current_user.accountable.website %></p>
+    <p>Email Address: <%= current_user.email %></p>
+    <p>Genre: <%= current_user.accountable.genre %></p>
+    <p>Description:<%= current_user.accountable.description%></p>
+<% else %>
+    <p>Name: <%=current_user.username %><p>
+    <p>Email Address: <%= current_user.email %></p>
+    <p>City: <%= current_user.accountable.city %></p>
+    <p>State: <%= current_user.accountable.state%></p>
+    <p>Favorite Band: <%= current_user.accountable.favorite_band%></p>
+<%end%>
 
 
 <%= link_to "Update Account", edit_account_path(current_user)%>
