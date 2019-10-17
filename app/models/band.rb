@@ -5,5 +5,9 @@ class Band < ApplicationRecord
     has_many :shows, through: :band_shows
     has_many :user_bands
     has_many :users, through: :user_bands
+
+    def name
+        self.account.username
+    end
     
 end
