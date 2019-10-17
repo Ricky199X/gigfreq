@@ -73,7 +73,6 @@ Tasks:
 1. BAND: Need to add new show from the browser + have it persist to the database
     Current Issues: 
     1. show persists without a band_id -> is it because the band_id is a required attribute and I'm not passing it in during the form?
-    2. Show persists with a nil value in date -> why?
 
 2. Once band adds show, needs to redirect back to the band_shows path 
 3. BAND: Need to build out Your Profile view - show basic band information in a container 

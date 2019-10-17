@@ -4,12 +4,32 @@ class ShowsController < ApplicationController
     end
 
     def new
+
+        if !session[:is_band]
+            #flash message you're not a band
+            redirect_to user_path(current_user)
+        end
+        # add show errors to view
+        if params[:band_id]
+            @band = Band.find(params[:band_id])
+        end
         @show = Show.new
     end
 
     def create
-        @show = Show.create(show_params)
+        #verify that band id is same as current band 
+        # make sure person logged in is band
+    
+        
+        @show = Show.new(show_params)
+        @band = Band.find(params[:band_id])
+        @show.band = @band
+
+        if @show.save 
         redirect_to show_path(@show)
+        else 
+            render :new
+        end
     end
 
     def show
@@ -35,6 +55,6 @@ class ShowsController < ApplicationController
     private
 
     def show_params
-        params.require(:show).permit(:name, :venue, :city, :state, :date, :band_id)
+        params.require(:show).permit(:name, :venue, :city, :state, :date)
     end
 end

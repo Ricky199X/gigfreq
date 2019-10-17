@@ -1,6 +1,6 @@
 <h2>Enter an upcoming gig here!</h2>
 
-<%= form_for @show do |f| %>
+<%= form_with model: @show, url: [@band, @show]  do |f| %>
 
   <div class= "field">
     <%= f.label :name %><br/>

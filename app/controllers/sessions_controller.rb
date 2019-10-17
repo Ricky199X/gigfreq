@@ -7,11 +7,12 @@ class SessionsController < ApplicationController
 
     def create 
         @account = Account.find_by(email: params[:email])
-        
+
         if !@account.nil? && @account.authenticate(params[:password])
                 log_in(@account)
                 flash[:success] = "Welcome Back, #{@account.username}!"
             if @account.accountable_type == "Band"
+                session[:is_band] = true 
                 redirect_to band_path(@account.accountable.id)
             else 
                 redirect_to user_path(@account.accountable.id)
