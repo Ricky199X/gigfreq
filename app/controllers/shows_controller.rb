@@ -39,7 +39,7 @@ class ShowsController < ApplicationController
     end
 
     def edit
-        @show = Show.find(id: params[:id])
+        @show = Show.find_by(id: params[:id])
     end
 
     def update
@@ -47,7 +47,7 @@ class ShowsController < ApplicationController
         @show.update(show_params)
 
         if @show.save
-            redirect_to edit_show_path(@show)
+            redirect_to band_show_path(@show)
         else
             flash[:alert] = "Show not saved!"
         end
