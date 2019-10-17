@@ -1,9 +1,10 @@
 <h1>Your Account Info:</h1>
 
-<% if current_user %>
-    <%current_user.info.each do |key, value| %>
-        <li><%=key%>: <%= value %>
-        </li>
-    <%end%>
-<%end%>
+<p><%=current_user.username %><p>
+<p><%=current_user.accountable.website %></p>
+<p><%= current_user.email %></p>
+<p><%= current_user.accountable.genre %></p>
+<p><%= current_user.accountable.description%></p>
 
+
+<% link_to "Update Account", %>
