@@ -21,7 +21,7 @@
          <td><%= show.venue%></td>
          <td><%= "#{show.city}, #{show.state}"%></td>
 
-         <% if current_user.class == Band %>
+         <% if current_user.accountable_type == "Band" %>
          <td><%= link_to "View #{show.name}" , show_path(show)%></td>
          <%else%>
          <td><%= link_to "See #{show.name}" , show_path(show)%></td>

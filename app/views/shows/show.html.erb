@@ -9,5 +9,11 @@
    <p><strong>Date:</strong> <%=@show.date%></p>
 
 
-   <%= link_to "Edit Show", edit_show_path %>
+   <% if current_user.accountable_type == "Band" %>
+      <%= link_to "Edit Show", edit_show_path(current_user) %>
+   <%else%>
+      <%= link_to "Attend Show!", user_shows_path(current_user)%>
+   <%end%>
+
+   
 </div>
