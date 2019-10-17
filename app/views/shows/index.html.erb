@@ -31,6 +31,8 @@
    </tbody>
 </table>
 
-<div class="actions">
-<%= link_to "Add a Gig", new_band_show_path %>
-</div>
+<% if current_user.accountable_type == "Band" %>
+   <%= link_to "Add a Gig", new_band_show_path(current_user) %>
+<%else%>
+   <%= link_to "View Your Shows", user_shows_path(current_user)%>
+<%end%>
