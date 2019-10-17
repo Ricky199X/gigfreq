@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     end
 
     def current_user
-        User.find_by(id: session[:account_id])
+        Account.find_by(id: session[:account_id])
     end
 
     def log_out

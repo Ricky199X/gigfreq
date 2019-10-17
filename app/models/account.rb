@@ -7,7 +7,7 @@ class Account < ApplicationRecord
 
 
     def info
-        self.attribute.values
+        self.attributes
     end
     
 end 

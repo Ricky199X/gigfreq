@@ -1,4 +1,9 @@
 <h1>Your Account Info:</h1>
 
-
+<% if current_user %>
+    <%current_user.info.each do |key, value| %>
+        <li><%=key%>: <%= value %>
+        </li>
+    <%end%>
+<%end%>
 
