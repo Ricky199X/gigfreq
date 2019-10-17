@@ -70,8 +70,15 @@ Test Band Account: interpol@interpol.com -> interpol
 
 Tasks:
 
-1. 
-2. Make any additional views based on nav bar items 
+1. BAND: Need to add new show from the browser + have it persist to the database
+    Current Issues: 
+    1. show persists without a band_id -> is it because the band_id is a required attribute and I'm not passing it in during the form?
+    2. Show persists with a nil value in date -> why?
+
+2. Once band adds show, needs to redirect back to the band_shows path 
+3. BAND: Need to build out Your Profile view - show basic band information in a container 
+4. Band profile view needs to have link to Edit Profile
+
 
 
 
@@ -98,7 +105,7 @@ Sessions Controller - Logout Action - DONE
 Test for logging in User - DONE
 Test for logging in Band - DONE
  Need Nav Bar based on User or Band - rendering, but erroring out (mixing up the routes) - DONE
-
+Show persisting to database with datte now
 
 
 
