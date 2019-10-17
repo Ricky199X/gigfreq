@@ -1,5 +1,6 @@
 <h1>Your Account Info:</h1>
 
+<div class="w3-container">
 <% if current_user.accountable_type == "Band" %>
     <p>Name: <%=current_user.username %><p>
     <p>Website: <%=current_user.accountable.website %></p>
@@ -13,6 +14,6 @@
     <p>State: <%= current_user.accountable.state%></p>
     <p>Favorite Band: <%= current_user.accountable.favorite_band%></p>
 <%end%>
-
+</div>
 
 <%= link_to "Update Account", edit_account_path(current_user)%>

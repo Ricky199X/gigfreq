@@ -70,9 +70,8 @@ Test Band Account: interpol@interpol.com -> interpol
 
 Tasks: 
 
-1. Once band adds show, needs to redirect back to the band_shows path 
-2. BAND: Need to build out Your Profile view - show basic band information in a container 
-3. Band profile view needs to have link to Edit Profile
+
+
 
 
 
@@ -102,6 +101,9 @@ Test for logging in Band - DONE
  Need Nav Bar based on User or Band - rendering, but erroring out (mixing up the routes) - DONE
 Show persisting to database with datte now
 BAND: Need to add new show from the browser + have it persist to the database - DOONE
+BAND: Need to build out Your Profile view - show basic band information in a container - DONE
+Once band adds show, needs to redirect back to the band_shows path - DONE
+Band profile view needs to have link to Edit Profile - DONE
 
 
 
