@@ -13,6 +13,7 @@
       <td><strong>Venue</strong></td>
       <td><strong>Location</strong></td>
       <td><strong>Date</strong></td>
+      <td><strong>Details</strong></td>
    </tr>
    
    <% @shows.each do |show| %>
@@ -20,6 +21,7 @@
          <td><%= show.band.name%></td>
          <td><%= show.venue%></td>
          <td><%= "#{show.city}, #{show.state}"%></td>
+         <td><%= show.date %>
 
          <% if current_user.accountable_type == "Band" %>
          <td><%= link_to "View #{show.name}" , show_path(show)%></td>
