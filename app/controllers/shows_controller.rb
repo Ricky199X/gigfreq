@@ -14,7 +14,6 @@ class ShowsController < ApplicationController
             flash[:danger] = "You're not a band!"
             redirect_to user_path(current_user)
         end
-        # add show errors to view
         if params[:band_id]
             @band = Band.find(params[:band_id])
         end

@@ -4,9 +4,10 @@ class UserShowsController < ApplicationController
     end
 
     def create
-        # find the show we want user to attend
-        # find the user we want to attend it
-        # 
+        @show = Show.find(params[:show_id])
+        @user = User.find(params[:user_id])
+        @show.users << @user
+        byebug
     end
 
 
