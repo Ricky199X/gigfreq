@@ -1,6 +1,7 @@
 class ShowsController < ApplicationController
     def index
         if params[:band_id]
+            # binding.pry
             @band = Band.find(params[:band_id])
             @shows = @band.shows
         else
@@ -29,12 +30,10 @@ class ShowsController < ApplicationController
             @band = Band.find(params[:band_id])
             @show.band = @band
             if @show.save 
-                redirect_to band_shows_path(@show)
+                redirect_to band_shows_path(@band)
             else 
                 render :new
             end
-        else
-            @show.users << @user 
         end
     end
 

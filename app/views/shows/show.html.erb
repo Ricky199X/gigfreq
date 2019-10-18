@@ -10,7 +10,7 @@
 
 
    <% if current_user.accountable_type == "Band" %>
-      <%= link_to "Edit Show", edit_show_path(current_user) %>
+      <%= link_to "Edit Show", edit_band_show_path(current_user) %>
    <%else%>
       <%= form_tag '/shows' do %>
       <%= hidden_field_tag 'show[show_id]', @show.id %>
