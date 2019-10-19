@@ -18,6 +18,9 @@
 
 <% if current_user.accountable_type == "Band"%>
     <button><%= link_to "Update Band Info", edit_band_path(current_user)%>
+    <button><%= link_to "Back", band_path(current_user)%>
 <%else%>
     <button><%= link_to "Update Account", edit_user_path(current_user)%></button>
+    <button><%= link_to "Back", user_path(current_user)%>
 <%end%>
+
