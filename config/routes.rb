@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :shows
   
+  get '/auth/facebook/callback', to: 'sessions#fbauth'
   get "login" => "sessions#new", as: "login"
   post "login" => "sessions#create"
 
