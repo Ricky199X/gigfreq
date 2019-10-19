@@ -1,4 +1,4 @@
-<h1><%= "#{@band.name}" + "s" if @band%> Upcoming Shows</h1>
+<h1><%= "#{@band.name}" + "s" if @band%> Upcoming Gigs</h1>
 
 <table class="table">
   <thead>
@@ -38,5 +38,5 @@
    <button><%= link_to "Home", band_path(current_user)%>
 <%else%>
    <button><%= link_to "View Your Shows", user_shows_path(current_user)%></button>
-   <button><%= link_to "Back", band_path(current_user)%>
+   <button><%= link_to "Back", user_path(current_user)%>
 <%end%>

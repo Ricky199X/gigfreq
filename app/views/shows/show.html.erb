@@ -1,3 +1,4 @@
+
 <h1><%=@show.name%></h1>
 
 <div class="show info">
@@ -12,7 +13,7 @@
 
 <div class = "actions">
 <% if current_user.accountable_type == "Band" %>
-      <%= link_to "Edit Show", edit_band_show_path(current_user) %>
+      <button><%= link_to "Edit Show", edit_band_show_path(current_user) %></button>
    <%else%>
       <%= form_tag '/shows' do %>
       <%= hidden_field_tag 'show[user_id]', current_user.id %>
