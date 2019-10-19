@@ -1,13 +1,13 @@
 class ShowsController < ApplicationController
     def index
         # checks if the current user accountable type = band 
-        if current_user.account.accountable_type == "Band"
+        if current_user.accountable_type == "Band"
             # binding.pry
             # if the validation = true, look for the specific band 
             @band = Band.find(params[:band_id])
             # if we find thee band, the shows == their shows
             @shows = @band.shows
-        elsif current_user.account.accountable_type == "User"
+        elsif current_user.accountable_type == "User"
             # find the current_user logged in 
             @user = User.find(params[:user_id])
             # @shows becomes any shows that the user has associated with their instance
