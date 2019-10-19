@@ -45,12 +45,12 @@ class ShowsController < ApplicationController
     end
 
     def update
-        # raise params.inspect
+        current_user
         @show = Show.find_by(id: params[:id])
         @show.update(show_params)
 
         if @show.save
-            redirect_to show_path(@show)
+            redirect_to band_shows_path(@show)
         else
             flash[:alert] = "Show not saved!"
             redirect to edit_path(@show)
