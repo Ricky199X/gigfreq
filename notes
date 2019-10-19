@@ -138,3 +138,11 @@ belongs_to band
 
 s = Show.create(name: "antics", venue: "the roxy", city: "los angeles", state: "california", date: "10/20/2019")
 b = Band.new(name: yeah )
+
+
+
+Problems with Omniauth login 
+1. User model currently has the self.from_facebook method
+2. When you sign up or log into my app we use the ACCOUNT for that 
+3. Based on the accountable type, we make a decision on where to send you to fil out the USER params
+4. User model does not have a name method or email method, those are accessed by chaining user.account.name, etc.

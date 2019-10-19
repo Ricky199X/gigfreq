@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2019_10_16_220551) do
     t.boolean "band", default: false
     t.string "accountable_type"
     t.integer "accountable_id"
-    t.integer "uid"
     t.index ["accountable_type", "accountable_id"], name: "index_accounts_on_accountable_type_and_accountable_id"
   end
 
@@ -62,6 +61,7 @@ ActiveRecord::Schema.define(version: 2019_10_16_220551) do
     t.string "city"
     t.string "state"
     t.string "favorite_band"
+    t.integer "uid"
   end
 
 end

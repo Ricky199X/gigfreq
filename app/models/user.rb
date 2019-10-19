@@ -20,5 +20,13 @@ class User < ApplicationRecord
     redirect_to user_path
   end
 
+  def name
+    self.account.username
+  end
+
+  def email
+    self.account.email
+  end
+
 
 end
