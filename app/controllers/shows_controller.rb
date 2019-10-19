@@ -7,15 +7,13 @@ class ShowsController < ApplicationController
             @band = Band.find(params[:band_id])
             # if we find thee band, the shows == their shows
             @shows = @band.shows
-        elsif current_user.accountable_type == "User"
+        else
             # find the current_user logged in 
             @user = User.find(params[:user_id])
             # @shows becomes any shows that the user has associated with their instance
             @shows = @user.shows
-            redirect_to user_shows_path(@user)
-        else
-            @shows = Show.all
         end
+            @shows = Show.all
     end
 
     def new
