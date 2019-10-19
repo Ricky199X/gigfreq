@@ -1,13 +1,11 @@
-<h2>Welcome to GigFreq! Please create an account here!</h2>
-
-<%= form_for @account do |f| %>
+<%= form_with model: @account, local: true do |f| %>
 
   <div class= "field">
     <%= f.label :username %><br/>
     <%= f.text_field :username %>
   </div>
 
-  <div class=<%= field_class(@account, :email) %>>
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -31,11 +29,18 @@
     <%= f.submit "Sign up" %>
   </div>
 
+
+  <div>
+    <% if @user && @user.errors.any? %>
+      <% @user.errors.full_messages.each do |errmsg| %>
+        <p><%= errmsg %></p>
+      <% end %>
+    <% end %>
+  </div>
+
 <% end %>
 
-<% if @account.errors.any? %>
-  <%@account.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
-  <%end%>
-<%end%>
+ 
+
+
 
