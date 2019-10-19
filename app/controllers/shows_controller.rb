@@ -1,8 +1,11 @@
 class ShowsController < ApplicationController
     def index
-        if params[:band_id]
+        # checks if the current user accountable type = band 
+        if current_user.account.accountable_type == "Band"
             # binding.pry
+            # if the validation = true, look for the specific band 
             @band = Band.find(params[:band_id])
+            # if we find thee band, the shows == their shows
             @shows = @band.shows
         else
             @shows = Show.all
