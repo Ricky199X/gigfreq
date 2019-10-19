@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
                 flash[:success] = "Welcome Back, #{@account.username}!"
             if @account.accountable_type == "Band"
                 session[:is_band] = true 
-                redirect_to band_path(@account.accountable.id)
+                redirect_to band_path(@account.accountable_id)
             else 
-                redirect_to user_path(@account.accountable.id)
+                redirect_to user_path(@account.accountable_id)
             end 
         else 
             flash[:danger] = "Improper credentials given!"

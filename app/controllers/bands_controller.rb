@@ -36,7 +36,7 @@ class BandsController < ApplicationController
         @band.update(band_params)
 
         if @band.save
-            redirect_to edit_band_path(@band)
+            redirect_to band_path(@band)
         else
             flash[:alert] = "Band Profile not saved"
         end
