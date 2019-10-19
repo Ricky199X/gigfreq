@@ -1,0 +1,28 @@
+<%= form_for @user do |f| %>
+
+  <div class= "field">
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </div>
+
+   <div class= "field">
+    <%= f.label :state %><br/>
+    <%= f.select :state, options_for_select(us_states) %>
+  </div>
+
+  <div class= "field">
+    <%= f.label :favorite_band %><br/>
+    <%= f.text_field :favorite_band %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update Your Profile!" %>
+  </div>
+
+<% end %>
+
+<% if @user.errors.any? %>
+  <%@user.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <%end%>
+<%end%>
