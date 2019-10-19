@@ -152,5 +152,7 @@ Problems with Omniauth login
 Immediate Tasks:
 
 1. Logged in as user: User's Shows access the Band's shows 
-    - Should I write better current_user helper?
-    - Root of problem: index action in shows controller???????
+    - Should I write better current_user helper? - done 
+    - Root of problem: index action in shows controller??????? - done
+
+    - Now ALL SHOWS index is broken, can access User.shows, but unable to access the applications shows index
