@@ -12,6 +12,7 @@ class ShowsController < ApplicationController
             @user = User.find(params[:user_id])
             # @shows becomes any shows that the user has associated with their instance
             @shows = @user.shows
+            redirect_to user_shows_path(@user)
         else
             @shows = Show.all
         end
