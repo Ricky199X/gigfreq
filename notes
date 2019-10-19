@@ -69,8 +69,9 @@ Test User account: user@user.com -> user
 Test Band Account: interpol@interpol.com -> interpol
 
 Tasks: 
-1. Prevent User from being able to edit shows
-2. Add "Attend Show" logic to add to user's shows
+1. Need to be able to have a user attend a show
+2. Once user attends a show -> reroute them to their home page
+3. User login with Google
 
 
 
