@@ -152,5 +152,21 @@ Problems with Omniauth login
 Immediate Tasks:
 
 1. "Attend Shows" -> needs to create new instance of user_shows
+    - I want users to be able to attend show
+    - User should go to the index of shows, and be able to pick a show
+    - ...to add to its collection of shows (@user.shows)
+    - whatever shows the user is attending will appear in its user_shows index
+
+    Questions 
+    1. What is responsible for creating instance of UserShow? (UserShowController)
+    2. How can I add that show to that user's collection? (Similar to how we assigned @shows in the ShowController)
+        - Maybe can use shovel method here?
+        - Maybe a helper method in the User model to take care of the actual shoveling?
+    3. What data do i need to validate to make sure the user is not adding
+     ..... to another users collection?
+
+     create action -> will POST to the user's shows
+     
+
 2. Needs to reflect anything attended on the user's dashboard 
 3. Log in with Facebook (Only for Users)
