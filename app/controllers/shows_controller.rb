@@ -23,13 +23,14 @@ class ShowsController < ApplicationController
     def create
         #verify that band id is same as current band 
         # make sure person logged in is band
+        current_user
         @show = Show.new(show_params)
 
         if current_user.accountable_type == "Band"
             @band = Band.find(params[:band_id])
             @show.band = @band
             if @show.save 
-                redirect_to band_shows_path(@band)
+                redirect_to band_shows_path(current_user)
             else 
                 render :new
             end
@@ -50,7 +51,7 @@ class ShowsController < ApplicationController
         @show.update(show_params)
 
         if @show.save
-            redirect_to band_shows_path(@show)
+            redirect_to band_shows_path(current_user)
         else
             flash[:alert] = "Show not saved!"
             redirect to edit_path(@show)
