@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2019_10_16_220551) do
     t.string "city"
     t.string "state"
     t.string "favorite_band"
-    t.integer "uid"
   end
 
 end

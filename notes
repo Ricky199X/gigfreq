@@ -146,3 +146,4 @@ Problems with Omniauth login
 2. When you sign up or log into my app we use the ACCOUNT for that 
 3. Based on the accountable type, we make a decision on where to send you to fil out the USER params
 4. User model does not have a name method or email method, those are accessed by chaining user.account.name, etc.
+5. My current self.from_facebook method appears to be creating an instance of a user, and 

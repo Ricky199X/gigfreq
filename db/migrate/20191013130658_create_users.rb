@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :city
       t.string :state
       t.string :favorite_band
-      t.integer :uid
     end
   end
 end

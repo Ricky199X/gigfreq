@@ -10,11 +10,11 @@ class User < ApplicationRecord
 
   def self.from_facebook(auth)
     @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.name = auth['info']['name']
-      u.email = auth['info']['email']
+      u.account.username = auth['info']['name']
+      u.account.email = auth['info']['email']
       @upass = Sysrandom.hex(32)
-      u.password = @upass
-      u.password_confirmation = @upass
+      u.account.password = @upass
+      u.account.password_confirmation = @upass
     end
     log_in(@user)
     redirect_to user_path
