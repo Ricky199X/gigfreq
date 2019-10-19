@@ -5,4 +5,6 @@ class User < ApplicationRecord
   has_many :shows, through: :user_shows
   has_many :user_bands
   has_many :bands, through: :user_bands
+
+  accepts_nested_attributes_for :shows
 end
