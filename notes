@@ -151,8 +151,6 @@ Problems with Omniauth login
 
 Immediate Tasks:
 
-1. Logged in as user: User's Shows access the Band's shows 
-    - Should I write better current_user helper? - done 
-    - Root of problem: index action in shows controller??????? - done
-
-    - Now ALL SHOWS index is broken, can access User.shows, but unable to access the applications shows index
+1. "Attend Shows" -> needs to create new instance of user_shows
+2. Needs to reflect anything attended on the user's dashboard 
+3. Log in with Facebook (Only for Users)
