@@ -25,11 +25,11 @@ class SessionsController < ApplicationController
     end
 
     def fbauth
-        user = User.from_facebook(auth)
-        if user.save
-            flash[:success] = "Welcome, #{user.name}!"
-            log_in(user)
-            redirect_to user_path
+        account = Account.from_facebook(auth)
+        if account.save
+            flash[:success] = "Welcome, #{account.username}!"
+            log_in(account)
+            redirect_to account_path
         else
             flash[:failure] = "There was an issue with your login."
         end
