@@ -147,3 +147,10 @@ Problems with Omniauth login
 3. Based on the accountable type, we make a decision on where to send you to fil out the USER params
 4. User model does not have a name method or email method, those are accessed by chaining user.account.name, etc.
 5. My current self.from_facebook method appears to be creating an instance of a user, and 
+
+
+Immediate Tasks:
+
+1. Logged in as user: User's Shows access the Band's shows 
+    - Should I write better current_user helper?
+    - Root of problem: index action in shows controller???????
