@@ -2,12 +2,10 @@ class SessionsController < ApplicationController
     # will handle login/logoout for the application
 
     def new
-
     end
 
     def create 
         @account = Account.find_by(email: params[:email])
-
         if !@account.nil? && @account.authenticate(params[:password])
                 log_in(@account)
                 flash[:success] = "Welcome Back, #{@account.username}!"
@@ -18,18 +16,18 @@ class SessionsController < ApplicationController
                 redirect_to user_path(@account.accountable.id)
             end 
         else 
-        # NOW handle the account being nil or not validated
             flash[:danger] = "Improper credentials given!"
             redirect_to login_path
         end
     end
 
     def fbauth
-        user = User.from_facebook(auth)
-        if user.save
+        access_token = request.env["omniauth.auth"]
+        account = Account.from_facebook(access_token)
+        if account.save
             flash[:success] = "Welcome, #{user.username}!"
-            log_in(user)
-            redirect_to user_path
+            log_in(account)
+            redirect_to user_path(account)
         else
             flash[:failure] = "There was an issue with your login."
         end
