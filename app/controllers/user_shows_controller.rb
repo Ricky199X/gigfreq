@@ -1,7 +1,8 @@
 class UserShowsController < ApplicationController
 
   def new 
-    atten
+    user_show = UserShow.create(user_id: params[:user_show][:user_id], show_id: params[:user_show][:show_id])
+    redirect_to user_path(user_show.user)
   end
 
 
