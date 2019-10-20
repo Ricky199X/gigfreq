@@ -27,6 +27,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem 'sysrandom', '~> 1.0', '>= 1.0.5'
+gem 'omniauth-google-oauth2'
 gem 'thin'
 
 gem 'dotenv-rails'

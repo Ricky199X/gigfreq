@@ -6,6 +6,8 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.string :password_digest
       t.boolean :band, default: false
       t.references :accountable, polymorphic: true
+      t.string :uid
+      t.string :provider
     end
   end
 end

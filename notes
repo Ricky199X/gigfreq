@@ -173,3 +173,12 @@ Immediate Tasks:
 
 2. Needs to reflect anything attended on the user's dashboard 
 3. Log in with Facebook (Only for Users)
+
+
+Omniauth Questions Goal:
+1. Want to be able to create an ACCOUNT with Facebook
+    - In MY APP, the account is contains Username info, email address, and password
+    - Sign in with Facebook will populate the username + password
+
+
+

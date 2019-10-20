@@ -23,16 +23,19 @@ class SessionsController < ApplicationController
 
     def fbauth
         access_token = request.env["omniauth.auth"]
-        user = User.from_facebook(access_token)
-        if user.save
+        account = Account.from_facebook(access_token)
+        if account.save
             flash[:success] = "Welcome, #{user.accountable.username}!"
             log_in(user)
-            redirect_to user_path(user)
+            redirect_to account_path(account)
         else
             flash[:failure] = "There was an issue with your login."
         end
     end
     
+    # make a new view + controller for the auth -> send them to another page where it asks them if they wanna
+    # sign up for a user account or a band account
+    # then in the sessions controller check if they're logging in as a facebook user, set the session 
 
     def logout
         session.delete(:account_id)

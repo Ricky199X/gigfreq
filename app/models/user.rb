@@ -8,17 +8,6 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :shows
 
-  def self.from_facebook(auth)
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.account.username = auth['info']['name']
-      u.account.email = auth['info']['email']
-      @upass = Sysrandom.hex(32)
-      u.account.password = @upass
-      u.account.password_confirmation = @upass
-    end
-    log_in(@user)
-    redirect_to user_path
-  end
 
   def name
     self.account.username

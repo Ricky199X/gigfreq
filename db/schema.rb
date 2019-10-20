@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2019_10_16_220551) do
     t.boolean "band", default: false
     t.string "accountable_type"
     t.integer "accountable_id"
+    t.string "uid"
+    t.string "provider"
     t.index ["accountable_type", "accountable_id"], name: "index_accounts_on_accountable_type_and_accountable_id"
   end
 
