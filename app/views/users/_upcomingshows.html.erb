@@ -9,6 +9,7 @@
    <tbody>
    <tr>
       <td><strong>Artist</strong></td>
+      <td><strong>Name</strong></td>
       <td><strong>Venue</strong></td>
       <td><strong>Location</strong></td>
       <td><strong>Date</strong></td>
@@ -16,6 +17,7 @@
    
    <% @user.shows.each do |show| %>
       <tr>
+         <td><%= show.band_name %></td>
          <td><%= show.name%></td>
          <td><%= show.venue%></td>
          <td><%= "#{show.city}, #{show.state}"%></td>

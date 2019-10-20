@@ -9,5 +9,9 @@ class Show < ApplicationRecord
         self.users.count
     end
 
+    def band_name
+        self.band.account.username
+    end
+
     
 end
