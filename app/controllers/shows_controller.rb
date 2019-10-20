@@ -45,12 +45,12 @@ class ShowsController < ApplicationController
     end
 
     def update
-        current_user
+        current_band
         @show = Show.find_by(id: params[:id])
+        # byebug
         @show.update(show_params)
-
         if @show.save
-            redirect_to band_shows_path(current_user)
+            redirect_to band_shows_path(current_band)
         else
             flash[:alert] = "Show not saved!"
             redirect to edit_path(@show)

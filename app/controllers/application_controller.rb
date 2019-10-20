@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
         Account.find_by(id: session[:account_id])
     end
 
+    def current_band
+        current_user.accountable.id
+    end
+
     def log_out
         session.delete(:account_id)
         render '/'

@@ -15,6 +15,23 @@ class Band < ApplicationRecord
         Show.select {|gig| gig.band_id == self.id}
     end
 
+    # helper methods for metrics 
+
+    # total shows
+    def total_shows
+        self.shows.count
+    end
+
+    # total fans
+    def total_fans
+        total = 0
+        self.shows.each do |show|
+            total += show.users.count
+        end
+        total
+    end
+
+
 
     
 end

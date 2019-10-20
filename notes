@@ -69,9 +69,9 @@ Test User account: user@user.com -> user
 Test Band Account: interpol@interpol.com -> interpol
 
 Tasks: 
-1. Need to be able to have a user attend a show
-2. Once user attends a show -> reroute them to their home page
-3. User login with Google
+1. User login with Facebook
+2.
+ 
 
 
 
@@ -108,6 +108,9 @@ BAND: Need to add new show from the browser + have it persist to the database - 
 BAND: Need to build out Your Profile view - show basic band information in a container - DONE
 Once band adds show, needs to redirect back to the band_shows path - DONE
 Band profile view needs to have link to Edit Profile - DONE
+ Helper Methods for Band Metrics: 
+    - total shows - DONE
+    - total fans - DONE
 
 
 
