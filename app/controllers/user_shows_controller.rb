@@ -2,7 +2,7 @@ class UserShowsController < ApplicationController
   
   def create 
     users_only
-    user_show = UserShow.create(user: current_user.accountable, show: Show.find(params[:show_id]))
+    user_show = UserShow.create(user: current_user.accountable, show: Show.find(params[:show_id]), tickets_bought: Show.find(params[:tickets_bought]))
     
       if user_show.save
         redirect_to user_shows_path(current_user.accountable.id)

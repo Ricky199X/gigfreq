@@ -17,7 +17,7 @@
 <%else%>
    <%= form_tag '/attend' do %>
       <%= hidden_field_tag 'show_id', @show.id %>
-      <%= select_tag :tickets_bought, options_for_select(tickets_bought_range) %>
+      <%= select_tag :tickets_bought, options_for_select(tickets_bought_range)%>
       <%= submit_tag "Attend This Show!" %>
    <%end%>
 <%end%>

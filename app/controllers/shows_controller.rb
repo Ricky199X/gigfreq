@@ -5,6 +5,7 @@ class ShowsController < ApplicationController
         elsif
             params[:user_id]
             @shows = User.find(params[:user_id]).shows
+            # @shows.tickets_bought = UserShow.find(params[:tickets_bought])
         else
             @shows = Show.all
         end
