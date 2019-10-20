@@ -47,7 +47,6 @@ class ShowsController < ApplicationController
     def update
         current_band
         @show = Show.find_by(id: params[:id])
-        # byebug
         @show.update(show_params)
         if @show.save
             redirect_to band_shows_path(current_band)
