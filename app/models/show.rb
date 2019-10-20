@@ -5,4 +5,9 @@ class Show < ApplicationRecord
     has_many :users, through: :user_shows
 
 
+    def total_users
+        self.users.count
+    end
+
+    
 end
