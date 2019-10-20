@@ -29,7 +29,7 @@ class ShowsController < ApplicationController
             @band = Band.find(params[:band_id])
             @show.band = @band
             if @show.save 
-                redirect_to band_shows_path(current_user)
+                redirect_to band_shows_path(@band)
             else 
                 render :new
             end
