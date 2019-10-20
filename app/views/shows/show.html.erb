@@ -16,8 +16,7 @@
    <button><%= link_to "Edit Show", edit_band_show_path(current_user) %></button>
 <%else%>
    <%= form_tag '/attend' do %>
-      <%= hidden_field_tag 'attend[show_id]', @show.id %>
-      <%= hidden_field_tag 'attend[user_id]', current_user.accountable.id %>
+      <%= hidden_field_tag 'show_id', @show.id %>
       <%= submit_tag "Attend This Show!" %>
    <%end%>
 <%end%>

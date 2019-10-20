@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', to: 'sessions#fbauth'
   get "login" => "sessions#new", as: "login"
   post "login" => "sessions#create"
-  post '/attend', to: 'user_shows#new'
+  post '/attend', to: 'user_shows#create'
 
   root to: "application#home"
  
