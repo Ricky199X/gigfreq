@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :accounts
   
   resources :users do 
-    resources :shows, only: [:index, :show]
+    resources :shows, only: [:index, :new, :show]
   end
 
   resources :bands do
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', to: 'sessions#fbauth'
   get "login" => "sessions#new", as: "login"
   post "login" => "sessions#create"
+  post '/attend', to: 'user_shows#new'
 
   root to: "application#home"
  

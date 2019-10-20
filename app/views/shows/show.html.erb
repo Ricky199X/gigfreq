@@ -15,6 +15,10 @@
 <% if current_user.accountable_type == "Band" %>
    <button><%= link_to "Edit Show", edit_band_show_path(current_user) %></button>
 <%else%>
-   <button><%= link_to "Attend This Show!" %></button>
+   <%= form_tag '/attend' do %>
+      <%= hidden_field_tag 'attend[show_id]', @show.id %>
+      <%= hidden_field_tag 'attend[user_id]', current_user.id %>
+      <%= submit_tag "Attend This Show!" %>
+   <%end%>
 <%end%>
 </div>
