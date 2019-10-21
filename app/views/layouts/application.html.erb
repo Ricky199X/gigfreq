@@ -11,25 +11,14 @@
 
   <body>
 
-  <header>
-    <nav>
-      <ul>
-        <li>Dashboard</li>
-        <li>All Shows</li>
-        <li>Your Shows</li>
-        <li>Your Profile</li>
-      </ul>
-    </nav>
-  
-  </header>
+ 
 
 
-
-   <% flash.each do |k,v| %>
-      <div><%= v %></div>
-    <%end%>
 
     <%= yield %>
+     <% flash.each do |k,v| %>
+      <div><%= v %></div>
+    <%end%>
 
 
     

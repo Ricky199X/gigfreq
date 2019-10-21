@@ -1,3 +1,5 @@
-<%= link_to "Gigs", band_shows_path(@band)%>
-<%= link_to "Your Profile", account_path(@band.account)%>
-<%= link_to "Log Out", root_path%>
+<%= link_to "Home", band_path %>
+<%= link_to "Gigs", band_shows_path(@band) %>
+<%= link_to "Your Profile", account_path(@band.account) %>
+<%= link_to "Stats", stats_path%>
+<%= link_to "Log Out", root_path %>
