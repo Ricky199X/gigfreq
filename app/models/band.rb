@@ -31,7 +31,20 @@ class Band < ApplicationRecord
         total
     end
 
+    # Location Count
+    def locations
+        location_count = 0
+        self.shows.each do |show|
+            if show.city != nil
+                location_count += 1
+            end
+        end
+        location_count
+    end
 
+
+    def tickets_sold
+    end
 
     
 end

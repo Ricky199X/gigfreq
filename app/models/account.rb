@@ -23,4 +23,7 @@ class Account < ApplicationRecord
         self.attributes
     end
     
+    def shows
+        self.accountable.shows
+    end
 end 
