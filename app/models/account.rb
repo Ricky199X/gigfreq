@@ -14,7 +14,7 @@ class Account < ApplicationRecord
         if Account.exists?(account)
             account
         else
-            account.save
+            account.save!
             account
         end   
     end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :shows
   
   get '/auth/facebook/callback', to: 'sessions#fbauth'
+  get 'auth/failure', to: redirect('/')
   get "login" => "sessions#new", as: "login"
   post "login" => "sessions#create"
   post '/attend', to: 'user_shows#create'

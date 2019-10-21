@@ -22,14 +22,20 @@ class SessionsController < ApplicationController
     end
 
     def fbauth
-        access_token = request.env["omniauth.auth"]
-        account = Account.from_facebook(access_token)
-        if account.save
-            flash[:success] = "Welcome, #{user.accountable.username}!"
-            log_in(user)
-            redirect_to account_path(account)
+       if request.env['omniauth.auth']
+        account = Account.from_facebook(request.env['omniauth.auth'])
+        session[:account_id] = account.id
+            if account.accountable_type == "User"
+                redirect_to new_user_path(account.accountable.id)
+            else
+                redirect_to new_band_path(account.accountable.id)
+            end
         else
-            flash[:failure] = "There was an issue with your login."
+            account = Account.find_by_email(params[:email])
+            account && account.authenticate(params[:password])
+            session[:account_id] = account.id
+            redirect_to 
+
         end
     end
     
