@@ -13,7 +13,11 @@
 
 <div class = "fans"> 
     <p><strong>Your Fans:</strong></p>
+    <% if current_user.accountable.fans.empty? %>
+        <p>You don't have any fans (yet) !</p>
+    <%else%>
     <% current_user.accountable.fans.each do |fan| %>
         <p><%=fan%></p>
+        <%end%>
     <%end%>
 </div>
