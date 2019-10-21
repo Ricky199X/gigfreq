@@ -54,6 +54,6 @@
    <button><%= link_to "Add a Gig", new_band_show_path(current_user.accountable) %></button>
    <button><%= link_to "Home", band_path(current_user.accountable)%>
 <%else%>
-   <button><%= link_to "View Your Shows", user_shows_path(current_user.accountable)%></button>
+   <button><%= link_to "All Shows", shows_path%></button>
    <button><%= link_to "Back", user_path(current_user.accountable)%>
 <%end%>
