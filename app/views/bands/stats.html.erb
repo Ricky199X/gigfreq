@@ -1,1 +1,14 @@
-<h1><%=current_user.name%>'s Stats</h1>
+<h1><%=current_user.username%>'s Stats</h1>
+
+<div class="stats info">
+   <p><strong>Your Total Shows:</strong> <%=current_user.accountable.total_shows%></p>
+   <p><strong>Your Total Fans:</strong> <%=current_user.accountable.total_fans%></p>
+   <p><>
+</div>
+
+
+<div> 
+    <% current_user.accountable.fans.each do |fan| %>
+        <p><%=fan%></p>
+    <%end%>
+</div>

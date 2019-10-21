@@ -26,4 +26,8 @@ class Account < ApplicationRecord
     def shows
         self.accountable.shows
     end
+
+    def name
+        self.accountable.username
+    end
 end 
