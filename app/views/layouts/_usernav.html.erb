@@ -1,5 +1,5 @@
-<%= link_to "Home", user_path %>
+<%= link_to "Home", user_path(current_user.accountable.id) %>
 <%= link_to "All Shows", shows_path %>
-<%= link_to "Your Shows", user_shows_path(@user) %>
-<%= link_to "Your Profile", account_path(@user.account) %>
+<%= link_to "Your Shows", user_shows_path(current_user.accountable.id) %>
+<%= link_to "Your Profile", account_path(current_user) %>
 <%= link_to "Log Out", root_path %>
