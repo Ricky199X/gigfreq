@@ -17,5 +17,10 @@ class User < ApplicationRecord
     self.account.email
   end
 
+  # # helper to get individual user_show.tickets?
+  # def user_show_tickets
+  #   self.user_shows.tickets_bought
+  # end
+
 
 end
