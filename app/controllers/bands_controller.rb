@@ -47,6 +47,10 @@ class BandsController < ApplicationController
         redirect_to '/'
     end
 
+    def stats
+        @band = Band.find(params[:id])
+    end
+
     private
 
     def band_params
