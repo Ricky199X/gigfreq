@@ -28,15 +28,22 @@
    
    <% @shows.each do |show| %>
       <tr>
+      <% if current_user.accountable_type == "Band "%>
          <td><%= show.band.name%></td>
          <td><%= show.venue%></td>
          <td><%= "#{show.city}, #{show.state}"%></td>
-         <td><%= show.date %>
-
+         <td><%= show.date %></td>
+      <%else%>
+         <td><%= show.band.name%></td>
+         <td><%= show.venue%></td>
+         <td><%= "#{show.city}, #{show.state}"%></td>
+         <td><%= show.date %></td>
+         <td><%= current_user.show.tickets_bought%>
+      <%end%>
          <% if current_user.accountable_type == "Band" %>
-         <td><%= link_to "View #{show.name}" , show_path(show)%></td>
+         <td><button><%= link_to "View #{show.name}" , show_path(show)%></button></td>
          <%else%>
-         <td><%= link_to "See #{show.name}" , show_path(show)%></td>
+         <td><button><%= link_to "See #{show.name}" , show_path(show)%></button></td>
          <%end%>
       </tr>
    <%end%>
