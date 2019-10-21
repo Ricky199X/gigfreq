@@ -11,7 +11,7 @@ class Account < ApplicationRecord
         account.password = auth['uid']
         account.username = auth['info']['name']
 
-        if Account.exists?(account)
+        if Account.exists?(account.id)
             account
         else
             account.save!

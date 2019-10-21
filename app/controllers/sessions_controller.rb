@@ -26,16 +26,15 @@ class SessionsController < ApplicationController
         account = Account.from_facebook(request.env['omniauth.auth'])
         session[:account_id] = account.id
             if account.accountable_type == "User"
-                redirect_to new_user_path(account.accountable.id)
+                redirect_to new_user_path(account)
             else
-                redirect_to new_band_path(account.accountable.id)
+                redirect_to new_band_path(account)
             end
         else
             account = Account.find_by_email(params[:email])
             account && account.authenticate(params[:password])
             session[:account_id] = account.id
-            redirect_to 
-
+            redirect_to account_path(account)
         end
     end
     
