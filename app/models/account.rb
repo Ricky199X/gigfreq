@@ -2,8 +2,8 @@ class Account < ApplicationRecord
     has_secure_password
     belongs_to :accountable, polymorphic: true, optional: true
 
-    validates :username, uniqueness: true
-    validates :email, uniqueness: true
+    validates :username, presence: true
+    validates :email, presence: true
 
     def self.from_facebook(auth)
         account = find_or_create_by(uid: auth['uid'], provider: auth['provider'])
