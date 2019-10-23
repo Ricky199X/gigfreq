@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
         redirect_to band_path(current_user.accountable) if is_band?
     end
 
-    def is_band?
+    def is_band
         return current_user.accountable_type == "Band"
     end
 

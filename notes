@@ -70,7 +70,7 @@ Test Band Account: interpol@interpol.com -> interpol
 
 Tasks: 
 1. Application Layout
-2.
+2. need to refactor 
  
 
 
@@ -181,5 +181,3 @@ Omniauth Questions Goal:
     - Sign in with Facebook will populate the username + password
 
 
-
-Adding changes to notes to test out commit on validations branch 
