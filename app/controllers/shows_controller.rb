@@ -1,4 +1,6 @@
 class ShowsController < ApplicationController
+    before_action :authenticate
+    
     def index
         if params[:band_id]
             @shows = Band.find(params[:band_id]).shows

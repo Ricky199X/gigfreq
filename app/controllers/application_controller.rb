@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
 
     private
 
+    # prevents an user not currently logged in from seeing any content
+    def authenticate
+        redirect_to login_path if !logged_in
+    end
+
     #logs in the account
     def log_in(acct)
         session[:account_id] = acct.id
@@ -13,12 +18,12 @@ class ApplicationController < ActionController::Base
 
     # determines if the an acocunt is logged in
     def logged_in
-        !!session[:account_id]
+        !!current_user
     end
 
     # Determines who the current user is by searching for the account_id currently in the sessions hash
     def current_user
-        @current_user = Account.find_by(id: session[:account_id])
+        current_user = Account.find_by(id: session[:account_id])
     end
 
     # determines if the current_user is both logged in and validates if they are a band
@@ -63,11 +68,9 @@ class ApplicationController < ActionController::Base
         return current_user.accountable_type == "Band"
     end
 
+    # check authorization for a user before they can do anything - implement in edit and update + show actions
     def require_auth(user)
-        if !current_user
-            flash[:error] = "You can't do that!"
-            redirect_to users_path
-        end
+
     end
 
 end

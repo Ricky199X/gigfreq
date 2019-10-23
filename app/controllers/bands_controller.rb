@@ -2,7 +2,7 @@ class BandsController < ApplicationController
     # if the type of account being created in a band account (admin account)
     # user is sent to the 2nd half of the band form here
     # band can edit profile with this controller
-
+    before_action :authenticate
     before_action :verify_info_set, except: [:new, :create]
     def index
         @bands = Band.all
