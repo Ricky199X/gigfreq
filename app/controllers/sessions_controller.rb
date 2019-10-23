@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
                 log_in(@account)
                 flash[:success] = "Welcome Back, #{@account.username}!"
             if @account.accountable_type == "Band"
-                session[:is_band] = true 
+                is_band
                 redirect_to band_path(@account.accountable_id)
             else 
                 redirect_to user_path(@account.accountable_id)
@@ -39,12 +39,11 @@ class SessionsController < ApplicationController
         end
     end
     
-    # make a new view + controller for the auth -> send them to another page where it asks them if they wanna
-    # sign up for a user account or a band account
-    # then in the sessions controller check if they're logging in as a facebook user, set the session 
-
+  
+    # logs out the user - displays goodbye message
     def logout
-        session.delete(:account_id)
+        session.clear
+        flash[:notice] = "Thank you, come again!"
         redirect_to root_path
     end
     
