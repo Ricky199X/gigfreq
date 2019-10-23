@@ -57,4 +57,11 @@ class ApplicationController < ActionController::Base
         return current_user.accountable_type == "Band"
     end
 
+    def require_auth(user)
+        if !current_user
+            flash[:error] = "You can't do that!"
+            redirect_to users_path
+        end
+    end
+
 end

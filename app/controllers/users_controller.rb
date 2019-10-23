@@ -4,10 +4,12 @@ class UsersController < ApplicationController
     # user can edit profile with this controller
     before_action :verify_info_set, except: [:new, :create]
 
+    # display the user signup form
     def new 
         @user = User.new
     end 
 
+    # create the user 
     def create 
         @user = User.new(user_params)
         @user.account = Account.find(session[:account_id])
@@ -20,8 +22,10 @@ class UsersController < ApplicationController
         end
     end
 
+    # display the user's page - should require authorization to view their profile
     def show
         @user = User.find(params[:id])
+        require_auth(@user)
     end
 
     def edit

@@ -69,9 +69,10 @@ Test User account: user@user.com -> user
 Test Band Account: interpol@interpol.com -> interpol
 
 Tasks: 
-1. Application Layout
-2. need to refactor 
- 
+1. Account Controller Refactor - DONE
+2. User Controller Refactor - 
+3. Band Controller Refactor
+4. Sessions Controller Refactor 
 
 
 
