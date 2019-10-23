@@ -6,20 +6,24 @@ class ApplicationController < ActionController::Base
 
     private
 
+    #logs in the account
     def log_in(acct)
         session[:account_id] = acct.id
     end
 
+    # determines if the an acocunt is logged in
     def logged_in
         !!session[:account_id]
     end
 
+    # Determines who the current user is by searching for the account_id currently in the sessions hash
     def current_user
-        Account.find_by(id: session[:account_id])
+        @current_user = Account.find_by(id: session[:account_id])
     end
 
+    # determines if the current_user is both logged in and validates if they are a band
     def current_band
-        current_user.accountable.id
+        current_user.logged_in && current_user.accountable_type == "Band"
     end
 
     def log_out
@@ -49,10 +53,12 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    # prevents band profiles from accessing user resources
     def users_only
-        redirect_to band_path(current_user.accountable) if is_band?
+        redirect_to band_path(current_user.accountable) if is_band
     end
 
+    # expression that current_user's accountable_type == Band
     def is_band
         return current_user.accountable_type == "Band"
     end
