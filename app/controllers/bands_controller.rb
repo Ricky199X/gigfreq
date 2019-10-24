@@ -4,6 +4,8 @@ class BandsController < ApplicationController
     # band can edit profile with this controller
     before_action :authenticate
     before_action :verify_info_set, except: [:new, :create]
+    before_action :require_authorized_band, except: [:new, :create]
+    
     def index
         @bands = Band.all
     end
@@ -24,15 +26,15 @@ class BandsController < ApplicationController
     end
 
     def show
-        @band = Band.find(params[:id])
+        # @band = Band.find(params[:id])
     end
 
     def edit
-        @band = Band.find_by(id: params[:id])
+        # @band = Band.find_by(id: params[:id])
     end
 
     def update
-        @band = Band.find_by(id: params[:id])
+        # @band = Band.find_by(id: params[:id])
         @band.update(band_params)
 
         if @band.save
