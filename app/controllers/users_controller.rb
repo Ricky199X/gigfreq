@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     def create 
         @user = User.new(user_params)
         @user.account = Account.find(session[:account_id])
+        # binding.pry
         if @user.save
             redirect_to user_path(@user)
         else
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
 
     # display the user's page - should require authorization to view their profile
     def show
+        binding.pry
         # @user = User.find(params[:id])
         # require_auth(@user)
     end
