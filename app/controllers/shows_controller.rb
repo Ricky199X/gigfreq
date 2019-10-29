@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-    before_action :authenticate
+    # before_action :authenticate
     
     def index
         if params[:band_id]
@@ -13,23 +13,25 @@ class ShowsController < ApplicationController
     end
 
     def new
-        if !session[:is_band]
+        # binding.pry
+        if !is_band
             flash[:danger] = "You're not a band!"
             redirect_to user_path(current_user)
         end
-        if params[:band_id]
+        if is_band
             @band = Band.find(params[:band_id])
         end
         @show = Show.new
     end
 
     def create
-        current_user
+        # require_authorized_band
         @show = Show.new(show_params)
 
         if current_user.accountable_type == "Band"
             @band = Band.find(params[:band_id])
             @show.band = @band
+            # binding.pry
             if @show.save 
                 redirect_to band_shows_path(@band)
             else 
@@ -43,15 +45,16 @@ class ShowsController < ApplicationController
     end
 
     def edit
+        # require_authorized_band
         @show = Show.find_by(id: params[:id])
     end
 
     def update
-        current_band
+        # require_authorized_band
         @show = Show.find_by(id: params[:id])
         @show.update(show_params)
         if @show.save
-            redirect_to band_shows_path(current_band)
+            redirect_to band_shows_path(@show.band)
         else
             flash[:alert] = "Show not saved!"
             redirect to edit_path(@show)

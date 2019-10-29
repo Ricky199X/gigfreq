@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
     # display the user's page - should require authorization to view their profile
     def show
-        binding.pry
+        # binding.pry
         # @user = User.find(params[:id])
         # require_auth(@user)
     end
