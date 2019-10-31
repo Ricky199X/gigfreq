@@ -191,3 +191,71 @@ Omniauth Questions Goal:
     - Sign in with Facebook will populate the username + password
 
 
+Project Knowledge Requirements:
+
+1. What is a POST request?
+    - A post request is used to send data to a server to update/create a resource. 
+    - Example: band updates the the information of an upcoming show via the update show form 
+    - this sends a POST request to the server to update the attributes of that show's object
+
+2. What are the 4 standard HTTP requests we work with in Rails?
+    - get: requests data from a specified resource 
+    - post: sends data from the browser to the server to update/create a resource
+    - patch: applies partial modifications to an existing resource - does not completely replace a resource, unlike PUT
+    - delete: deletes a specified resource
+
+3. Describe the life cycle of a post request in your app.
+
+
+
+4. Describe validations and how they work.
+- validations are a way to ensure that only valid data is saved into the database
+- ex. validating presence of a user_name attribute means that the user is not valid without a user name
+- rails provides built in helpers to handle validations - making them easy to implementing
+- the validation reviews the data being passed in thru params, checks if it is valid, then ensures that it
+- is valid, if not it will provide an error.
+
+5. What is the purpose of join tables?
+- A join table is used to combine records from two or more tables by using values common to each.
+- in the context of my project, my join tables serve the purpose of relating a show to either a band or a user
+- user <<- user_show ->> show: relates an instance of a show to an instance of a user in my database
+- band <<- band_show ->> show: relates an instance of a show to a specific band 
+- that way, the show is a standalone entity that can "belong" to multiple types of accounts without having to include
+ a band ID and a user ID in the shows table
+
+- Helps limit the amount of required parameters I need to include to create a show
+
+6. What does belongs_to and has_many do in your controller? 
+- Belongs_to sets up a one to one connection between models. Ex. A show belongs to a band 
+- has_many sets up a many to many connection between models. ex. a band has_many shows through band_shows, making a band able to have multiple instacnes of shows related to their account
+- Activerecord is the gem responsible for these relationships 
+
+7. What macro writes your password + password= methods? 
+- the gem is bcrypt, the macro is has_secure_password
+
+8. Describe how nested forms work
+
+9. Describe how to set up nested URL's (manually or with nested resources)
+
+10. What are scopes? What is the type of data they take as an argument? What is an identical way to acheive this?
+
+11. Describe the authentication process in your app
+
+- sign up: 
+    1. You create an account as either a band or user. if you are a band, you check off the band box, which is a boolean that determines whether or not the account's accountable_type is "band or user".
+    2. Once you have determined your type, you are redirected to second half of the sign up form via the new_band_path or new_user_path to complete your registration. 
+    3. Upon login, you will have access to different resources dependent on whether you are a band or user.
+- log in: 
+    1. you log in using the email address and password present in the account.
+    2. The sessions conntorller create action will find the appropriate account by whatever email address is passed thru params, make sure the account is not nil, authenticate the password, then use log_in(@account) helper method to set the session account id to that account's id number.
+    2. Once you click log in, the instance of your account is passed through the log_in(@account) helper method in 
+
+- log out:
+    - when the user clicks log out - the session is cleared and the root path is rendered
+
+12. How to you protect your resources from users that do not own them? (and from logged out users?)
+
+
+
+
+

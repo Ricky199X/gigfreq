@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in
 
     
-
     private
 
     # prevents an user not currently logged in from seeing any content

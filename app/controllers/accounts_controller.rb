@@ -11,7 +11,6 @@ class AccountsController < ApplicationController
     # sign up form based on whether or not they checked off the band box
     def create
         @account = Account.new(account_params)
-        # binding.pry
         if @account.save
             log_in(@account)
             if params[:account][:band] == "1"
