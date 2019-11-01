@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
     # helper for nav bar based on logged in/logged out
 
     def navbar
-        if logged_in?
+        if logged_in
             render 'layouts/logged_in_navbar'
         else
             render 'layouts/logged_out_navbar'

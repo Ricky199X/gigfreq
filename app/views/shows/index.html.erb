@@ -1,12 +1,4 @@
 
-<header>
-   <% if current_user.accountable_type == "User" %>
-   <%= render 'layouts/usernav'%>
-   <% else %>
-   <%= render 'layouts/bandnav'%>
-   <%end%>
-</header>
-
 <h1><%= "#{@band.name}" + "s" if @band%> Upcoming Shows</h1>
 
 <table class="table">

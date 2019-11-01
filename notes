@@ -236,6 +236,10 @@ Project Knowledge Requirements:
 8. Describe how nested forms work
 
 9. Describe how to set up nested URL's (manually or with nested resources)
+- I used nested resources in my project in order to capture the has many relationship between my models
+- Ex. Band has access to all show resources (create, new, how, etc.)
+- In order to do this, next to my users resources expression, I pass a block of the nested routes for shows as well
+- since a show belongs to a band, a show is considered a child of that band model -> giving me access to url's such as "/bands/:band_id/shows/new"
 
 10. What are scopes? What is the type of data they take as an argument? What is an identical way to acheive this?
 
@@ -247,8 +251,8 @@ Project Knowledge Requirements:
     3. Upon login, you will have access to different resources dependent on whether you are a band or user.
 - log in: 
     1. you log in using the email address and password present in the account.
-    2. The sessions conntorller create action will find the appropriate account by whatever email address is passed thru params, make sure the account is not nil, authenticate the password, then use log_in(@account) helper method to set the session account id to that account's id number.
-    2. Once you click log in, the instance of your account is passed through the log_in(@account) helper method in 
+    2. The sessions controller create action will find the appropriate account by whatever email address is passed thru params, make sure the account is not nil, authenticate the password, then use log_in(@account) helper to set the session.
+    3. One additional check takes place after the session id has been set to determine if that accounts accountable type is a band or a user, depending on the type, you'll be redirected either to the band path or user path with thier accountable id
 
 - log out:
     - when the user clicks log out - the session is cleared and the root path is rendered

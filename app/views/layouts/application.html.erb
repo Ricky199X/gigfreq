@@ -10,6 +10,16 @@
   </head>
 
   <body>
+  <header>
+
+  <% if !logged_in %>
+    <%= render 'layouts/logged_out_navbar'%>
+  <%else%>
+    <%=render 'layouts/logged_in_navbar'%>
+  <%end%>
+
+</header>
+
    <% flash.each do |k,v| %>
       <div><%= v %></div>
     <%end%>

@@ -1,1 +1,5 @@
-<%= link_to "Log Out", logout_path %>
+ <% if current_user.accountable_type == "User" %>
+    <%= render 'layouts/usernav'%>
+<% else %>
+    <%= render 'layouts/bandnav'%>
+<%end%>

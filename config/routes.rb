@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   get "login" => "sessions#new", as: "login"
   post "login" => "sessions#create"
+  get '/logout' => 'sessions#destroy'
 
   get  '/bands/:id/stats', to: 'bands#stats', as: 'stats'
   

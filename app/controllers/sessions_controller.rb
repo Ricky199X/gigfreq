@@ -41,7 +41,7 @@ class SessionsController < ApplicationController
     
   
     # logs out the user - displays goodbye message
-    def logout
+    def destroy
         session.clear
         flash[:notice] = "Thank you, come again!"
         redirect_to root_path
