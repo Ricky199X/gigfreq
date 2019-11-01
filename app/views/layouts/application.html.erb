@@ -14,7 +14,7 @@
 
   <% if !logged_in %>
     <%= render 'layouts/logged_out_navbar'%>
-  <%else%>
+  <%elsif logged_in && current_user.accountable%>
     <%=render 'layouts/logged_in_navbar'%>
   <%end%>
 

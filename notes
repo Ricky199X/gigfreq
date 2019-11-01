@@ -266,8 +266,6 @@ Project Knowledge Requirements:
 12. How to you protect your resources from users that do not own them? (and from logged out users?)
 
 - require_auth(user) helper method will check if the current user's id == user.account.id 
-- require_authorized_user helper method
-- require_authorized_band helper method
 
 
 

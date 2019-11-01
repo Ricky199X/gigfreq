@@ -73,7 +73,6 @@ class ApplicationController < ActionController::Base
     end
 
     def require_authorized_user(obj)
-        # @user = User.find(params[:id])
         require_auth(obj.user)
     end
 
