@@ -1,4 +1,4 @@
-<h1>Welcome, <%=@band.account.username%>!</h1>
+<h1>Welcome, <%=current_user.username%>!</h1>
 
 <h2>See your upcoming shows below:</h2>
 
@@ -18,7 +18,7 @@
       <td><strong>Details</strong></td>
    </tr>
    
-   <% @band.shows.each do |show| %>
+   <% current_user.shows.each do |show| %>
       <tr>
          <td><%= show.name%></td>
          <td><%= show.venue%></td>

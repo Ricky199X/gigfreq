@@ -69,18 +69,13 @@ class ApplicationController < ActionController::Base
 
     # check authorization for a user before they can do anything - # should evaluate to true
     def require_auth(user)
-       return head(:forbidden) unless current_user.id == user.account.id
+       return head(:forbidden) unless current_user == user.account
     end
 
-    def require_authorized_user
-        @user = User.find(params[:id])
-        require_auth(@user)
+    def require_authorized_user(obj)
+        # @user = User.find(params[:id])
+        require_auth(obj.user)
     end
 
-    def require_authorized_band
-        @band = Band.find(params[:id])
-        require_auth(@band)
-        is_band
-    end
 
 end

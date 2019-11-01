@@ -53,6 +53,7 @@ class Band < ApplicationRecord
     end
 
 
+
     # def tickets_sold
     #     # has to iterate self's shows
     #     self.shows.each do |show|

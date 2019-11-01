@@ -1,5 +1,5 @@
-<%= link_to "Home", band_path(current_user.accountable.id) %>
+<%= link_to "Home", band_path(current_user.accountable) %>
 <%= link_to "Gigs", band_shows_path(current_user.accountable) %>
 <%= link_to "Your Profile", account_path(current_user) %>
-<%= link_to "Stats", stats_path(current_user.accountable.id)%>
+<%= link_to "Stats", stats_path(current_user.accountable)%>
 <%= link_to "Log Out", root_path %>

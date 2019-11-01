@@ -1,5 +1,4 @@
 class ShowsController < ApplicationController
-    # before_action :authenticate
     
     def index
         if params[:band_id]
@@ -20,6 +19,7 @@ class ShowsController < ApplicationController
         end
         if is_band
             @band = Band.find(params[:band_id])
+            require_auth(@band)
         end
         @show = Show.new
     end
@@ -30,8 +30,8 @@ class ShowsController < ApplicationController
 
         if current_user.accountable_type == "Band"
             @band = Band.find(params[:band_id])
+            require_auth(@band)
             @show.band = @band
-            # binding.pry
             if @show.save 
                 redirect_to band_shows_path(@band)
             else 
@@ -42,11 +42,14 @@ class ShowsController < ApplicationController
 
     def show
         @show = Show.find(params[:id])
+        
     end
 
     def edit
         # require_authorized_band
         @show = Show.find_by(id: params[:id])
+        @band= Band.find(params[:band_id])
+        require_auth(@show.band)
     end
 
     def update

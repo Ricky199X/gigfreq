@@ -205,6 +205,8 @@ Project Knowledge Requirements:
     - delete: deletes a specified resource
 
 3. Describe the life cycle of a post request in your app.
+- band will click the add show button, be taken to the form to add show details
+- when they submit -> the 
 
 
 
@@ -232,6 +234,8 @@ Project Knowledge Requirements:
 
 7. What macro writes your password + password= methods? 
 - the gem is bcrypt, the macro is has_secure_password
+- Adds methods to set and authenticate against a BCrypt password. 
+- This mechanism requires you to have a password_digest attribute. Where XXX is the attribute name of your desired password.
 
 8. Describe how nested forms work
 
@@ -242,6 +246,8 @@ Project Knowledge Requirements:
 - since a show belongs to a band, a show is considered a child of that band model -> giving me access to url's such as "/bands/:band_id/shows/new"
 
 10. What are scopes? What is the type of data they take as an argument? What is an identical way to acheive this?
+- Scopes are custom queries that are defined inside Rails models with the scope method. 
+- Every scope takes two arguments: A name, which you use to call this scope in your code. A lambda, which implements the query.
 
 11. Describe the authentication process in your app
 
@@ -258,6 +264,10 @@ Project Knowledge Requirements:
     - when the user clicks log out - the session is cleared and the root path is rendered
 
 12. How to you protect your resources from users that do not own them? (and from logged out users?)
+
+- require_auth(user) helper method will check if the current user's id == user.account.id 
+- require_authorized_user helper method
+- require_authorized_band helper method
 
 
 

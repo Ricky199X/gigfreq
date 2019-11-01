@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     # user can edit profile with this controller
     
     before_action :verify_info_set, except: [:new, :create]
-    before_action :require_authorized_user, except: [:new, :create]
+    # before_action :require_auth, except: [:new, :create]
 
     # display the user signup form
     def new 
@@ -15,11 +15,9 @@ class UsersController < ApplicationController
     def create 
         @user = User.new(user_params)
         @user.account = Account.find(session[:account_id])
-        # binding.pry
         if @user.save
             redirect_to user_path(@user)
         else
-            # MAKE SURE YOU RENDER ERRORS IN YOUR BAND NEW VIEW
             render :new
         end
     end

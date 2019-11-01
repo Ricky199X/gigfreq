@@ -15,7 +15,7 @@
       <td><strong>Date</strong></td>
    </tr>
    
-   <% @user.shows.each do |show| %>
+   <% current_user.shows.each do |show| %>
       <tr>
          <td><%= show.band_name %></td>
          <td><%= show.name%></td>
