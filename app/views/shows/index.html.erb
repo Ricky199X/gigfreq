@@ -18,7 +18,7 @@
       
    </tr>
    
-   <% @shows.each do |show| %>
+   <% @shows.shows_by_date.each do |show| %>
       <tr>
       <% if current_user.accountable_type == "Band "%>
          <td><%= show.band.name%></td>

@@ -6,9 +6,6 @@ class User < ApplicationRecord
   has_many :user_bands
   has_many :bands, through: :user_bands
 
-  accepts_nested_attributes_for :shows
-
-
   def name
     self.account.username
   end
