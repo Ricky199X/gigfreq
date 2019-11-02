@@ -73,7 +73,7 @@ class ApplicationController < ActionController::Base
     end
 
     def require_authorized_user(obj)
-        require_auth(obj.user)
+        require_auth(obj)
     end
 
 

@@ -30,13 +30,13 @@ class UsersController < ApplicationController
     end
 
     def edit
-        # @user = User.find_by(id: params[:id])
-        # require_authorized_user
+        @user = User.find_by(id: params[:id])
+        require_authorized_user(@user)
     end
 
     def update
-        # @user = User.find_by(id: params[:id])
-        # require_authorized_user
+        @user = User.find_by(id: params[:id])
+        require_authorized_user(@user)
         @user.update(user_params)
 
         if @user.save
