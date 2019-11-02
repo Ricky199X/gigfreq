@@ -18,13 +18,13 @@
       <td><strong>Details</strong></td>
    </tr>
    
-   <% current_user.shows.each do |show| %>
+   <% current_user.shows.shows_by_date.each do |show| %>
       <tr>
          <td><%= show.name%></td>
          <td><%= show.venue%></td>
          <td><%= "#{show.city}, #{show.state}"%></td>
          <td><%= show.date %></td>
-         <td><%= link_to "View Gig" , show_path(show)%></td>
+         <td><button><%= link_to "View Gig" , show_path(show)%></button></td>
       </tr>
    <%end%>
    </tbody>
