@@ -161,10 +161,28 @@ Problems with Omniauth login
 4. User model does not have a name method or email method, those are accessed by chaining user.account.name, etc.
 5. My current self.from_facebook method appears to be creating an instance of a user, and 
 
+Sign up with Facebook: steps
+1. Click log in with facebook
+2. Omniauth extracts the username, password, and email address
+3. fbauth method in Sessions Controller: Gets access tokens from the facebook server; find or create account
+    - If account.save, sets the session id, redirects to the new_user_path(account)
+
+    if user.save
+      session[:user_id] = user.id
+      redirect_to user_path(user)
+    else
+      flash[:error] = "Credentials don't work. Please try again."
+      redirect_to login_path
+    end
+
+
+
+
+
 
 Immediate Tasks:
 
-1. add uniq to the band class method to show fans
+1. add uniq to the band class method to show fans - DONE
 2. Omniauth for facebook - NEED TO FIX!!!
 3. Test all pages of site - needs to work 4 times in each section
       

@@ -22,21 +22,10 @@ class SessionsController < ApplicationController
     end
 
     def fbauth
-       if request.env['omniauth.auth']
+        request.env['omniauth.auth']
         account = Account.from_facebook(request.env['omniauth.auth'])
         log_in(account)
-            if account.accountable_type == "Band"
-                session[:is_band] = true
-                redirect_to new_band_path(account)
-            else
-                redirect_to new_user_path(account)
-            end
-        else
-            current_user
-            current_user && current_user.authenticate(params[:password])
-            session[:account_id] = account.accountable.id
-            redirect_to account_path(account)
-        end
+        redirect_to user_path(account)
     end
     
   
