@@ -16,7 +16,7 @@ class Band < ApplicationRecord
                 users << user.name
             end
         end
-        users
+        users.uniq
     end
 
     # helper methods for metrics 
