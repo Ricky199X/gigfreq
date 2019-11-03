@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     # if the type of account being created in a user account
     # user is sent to the 2nd half of the user form here
     # user can edit profile with this controller
-    
+    before_action :authenticate
     before_action :verify_info_set, except: [:new, :create]
 
     # display the user signup form
