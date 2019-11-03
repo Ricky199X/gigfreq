@@ -285,15 +285,18 @@ Testing:
 2. User Controller
     - Cannot Access another users home page - CHECKED (received forbidden)
     - Cannot eddit another users profile - CHECKED (recieved 403)
-
-3. User Shows Controller
-    - Cannot access another users shows - CHECKED (received 403)
     - Cannot add a show to another users profile (cannot access, will receive 403 before that)
+
+3. Bands Controller
+    - Cannot Access another bands profile - DONE (403 received)
+    - Cannot Edit another bands profile - DONE (403 received)
+
+4. Shows Controller
+
+    - Cannot access another users shows - CHECKED (received 403)
 
     - Band: Cannot create shows in another bands profile - CHECKED (received 403)
     - Band: Cannot EDIT shwos in another band's profile - CHECKED (received 403)
     - Band: Cannot access other band's shows - CHECKED (recived 403)
 
-4. Bands Controller
-
-5. Shows Controller
+5. Check Faceboook login 5 times- 
