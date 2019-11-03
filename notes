@@ -275,10 +275,10 @@ Project Knowledge Requirements:
 Testing:
 
 1. Make sure logged out users can't access anything
-2. Render 404 no found pages for trying to access something that doesn't exists
-3. Double check that 403 pages are not allowing current user to access other users info in create shows, edit shows, or edit profile
+2. Render 404 no found pages for trying to access something that doesn't exists - DONE + VERIFIED
+3. Double check that 403 pages are not allowing current user to access other users info in create shows, edit shows, or edit profile - DONE
 4. Clear out redundant code in Application Controller - DONE
-5. Check the band's stats page - currently showing more total fans than it should
+5. Check the band's stats page - currently showing more total fans than it should - DONE
 
 
 1. Sessions Controller - CHECKED + VALIDATIONS WORKING
@@ -299,4 +299,4 @@ Testing:
     - Band: Cannot EDIT shwos in another band's profile - CHECKED (received 403)
     - Band: Cannot access other band's shows - CHECKED (recived 403)
 
-5. Check Faceboook login 5 times- 
+5. Check Faceboook login 5 times - DONE. VERIFIED.

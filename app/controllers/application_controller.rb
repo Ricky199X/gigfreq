@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     helper_method :current_user, :logged_in
 
+    rescue_from ActiveRecord::RecordNotFound, :with => :rescue404
+    rescue_from ActionController::RoutingError, :with => :rescue404
+
     
     private
 
@@ -78,6 +81,10 @@ class ApplicationController < ActionController::Base
 
     def require_authorized_band(band)
         require_auth(band)
+    end
+
+    def rescue404
+        render(:file => File.join(Rails.root, 'public/404.html'), :status => 404, :layout => false)
     end
 
 
