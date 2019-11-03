@@ -272,6 +272,28 @@ Project Knowledge Requirements:
 - require_auth(user) helper method will check if the current user's id == user.account.id 
 
 
+Testing:
+
+1. Make sure logged out users can't access anything
+2. Render 404 no found pages for trying to access something that doesn't exists
+3. Double check that 403 pages are not allowing current user to access other users info in create shows, edit shows, or edit profile
+4. Clear out redundant code in Application Controller - DONE
+5. Check the band's stats page - currently showing more total fans than it should
 
 
+1. Sessions Controller - CHECKED + VALIDATIONS WORKING
+2. User Controller
+    - Cannot Access another users home page - CHECKED (received forbidden)
+    - Cannot eddit another users profile - CHECKED (recieved 403)
 
+3. User Shows Controller
+    - Cannot access another users shows - CHECKED (received 403)
+    - Cannot add a show to another users profile (cannot access, will receive 403 before that)
+
+    - Band: Cannot create shows in another bands profile - CHECKED (received 403)
+    - Band: Cannot EDIT shwos in another band's profile - CHECKED (received 403)
+    - Band: Cannot access other band's shows - CHECKED (recived 403)
+
+4. Bands Controller
+
+5. Shows Controller

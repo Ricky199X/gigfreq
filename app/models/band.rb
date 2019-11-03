@@ -26,13 +26,8 @@ class Band < ApplicationRecord
         self.shows.count
     end
 
-    # total fans
     def total_fans
-        total = 0
-        self.shows.each do |show|
-            total += show.users.count
-        end
-        total
+        fans.count
     end
 
     # Location Count

@@ -2,9 +2,13 @@ class ShowsController < ApplicationController
     
     def index
         if params[:band_id]
+            @band = Band.find(params[:band_id])
+            require_authorized_band(@band)
             @shows = Band.find(params[:band_id]).shows
         elsif
             params[:user_id]
+            @user = User.find(params[:user_id])
+            require_authorized_user(@user)
             @shows = User.find(params[:user_id]).shows
         else
             @shows = Show.all
@@ -46,10 +50,10 @@ class ShowsController < ApplicationController
     end
 
     def edit
-        # require_authorized_band
+        @band = Band.find(params[:band_id])
+        require_authorized_band(@band)
         @show = Show.find_by(id: params[:id])
-        @band= Band.find(params[:band_id])
-        require_auth(@show.band)
+        # require_authorized_band(@band)
     end
 
     def update
@@ -63,6 +67,7 @@ class ShowsController < ApplicationController
             redirect to edit_path(@show)
         end
     end
+
 
     private
 

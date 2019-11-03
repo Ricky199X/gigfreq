@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     # user can edit profile with this controller
     
     before_action :verify_info_set, except: [:new, :create]
-    # before_action :require_auth, except: [:new, :create]
 
     # display the user signup form
     def new 
@@ -25,8 +24,8 @@ class UsersController < ApplicationController
     # display the user's page - should require authorization to view their profile
     def show
         # binding.pry
-        # @user = User.find(params[:id])
-        # require_auth(@user)
+        @user = User.find(params[:id])
+        require_authorized_user(@user)
     end
 
     def edit
@@ -43,6 +42,7 @@ class UsersController < ApplicationController
             redirect_to user_path(@user)
         else
             flash[:alert] = "User Profile not saved"
+            render :edit
         end
     end
 

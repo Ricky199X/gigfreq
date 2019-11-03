@@ -76,5 +76,9 @@ class ApplicationController < ActionController::Base
         require_auth(obj)
     end
 
+    def require_authorized_band(band)
+        require_auth(band)
+    end
+
 
 end

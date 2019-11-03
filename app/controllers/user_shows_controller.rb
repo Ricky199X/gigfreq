@@ -3,7 +3,7 @@ class UserShowsController < ApplicationController
   def create 
     users_only
     user_show = UserShow.new(user: current_user.accountable, show: Show.find(params[:show_id]), tickets_bought: params[:tickets_bought])
-    # byebug
+    # binding.pry
       if user_show.save
         redirect_to user_shows_path(current_user.accountable.id)
       else 
@@ -12,5 +12,6 @@ class UserShowsController < ApplicationController
       end
   end
 
+  
 
 end

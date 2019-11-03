@@ -21,6 +21,13 @@ class SessionsController < ApplicationController
         end
     end
 
+     # logs out the user - displays goodbye message
+     def destroy
+        session.clear
+        flash[:notice] = "Thank you, come again!"
+        redirect_to root_path
+    end
+
     def fbauth
         request.env['omniauth.auth']
         account = Account.from_facebook(request.env['omniauth.auth'])
@@ -28,13 +35,6 @@ class SessionsController < ApplicationController
         redirect_to user_path(account)
     end
     
-  
-    # logs out the user - displays goodbye message
-    def destroy
-        session.clear
-        flash[:notice] = "Thank you, come again!"
-        redirect_to root_path
-    end
     
     private 
 
