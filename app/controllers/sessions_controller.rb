@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
         request.env['omniauth.auth']
         account = Account.from_facebook(request.env['omniauth.auth'])
         log_in(account)
-        redirect_to user_path(account.accountable)
+        redirect_to user_path(account)
     end
     
     
