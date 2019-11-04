@@ -4,6 +4,7 @@ class Account < ApplicationRecord
 
     validates :username, presence: true
     validates :email, presence: true
+    validates :email, uniqueness: true
 
     def self.from_facebook(auth)
         account = find_or_create_by(uid: auth['uid'], provider: auth['provider'])
