@@ -4,20 +4,29 @@ class Band < ApplicationRecord
     has_many :shows
     has_many :user_bands
     has_many :users, through: :user_bands
+    has_many :fans, -> { distinct }, through: :shows, source: :users
 
     def name
         self.account.username
     end
 
-    def fans
-        users = []
-        self.shows.each do |show|
-            show.users.each do |user|
-                users << user.name
-            end
-        end
-        users.uniq
+
+    def fan_names
+        fans.pluck(:name)
     end
+    # def fans
+    #     users = []
+    #     self.shows.each do |show|
+    #         show.users.each do |user|
+    #             users << user.name
+    #         end
+    #     end
+    #     users.uniq
+
+
+    #     #users = shows.map{|show| show.users.map{|user| user.name}}.flatten.uniq
+
+    # end
 
     # helper methods for metrics 
 

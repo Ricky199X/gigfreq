@@ -9,10 +9,10 @@
 
 <div class = "fans"> 
     <p><strong>Your Fans:</strong></p>
-    <% if current_user.accountable.fans.empty? %>
+    <% if current_user.accountable.fan_names.empty? %>
         <p>You don't have any fans (yet) !</p>
     <%else%>
-    <% current_user.accountable.fans.each do |fan| %>
+    <% current_user.accountable.fan_names.each do |fan| %>
         <p><%=fan%></p>
         <%end%>
     <%end%>

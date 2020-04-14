@@ -209,8 +209,7 @@ Project Knowledge Requirements:
     - delete: deletes a specified resource
 
 3. Describe the life cycle of a post request in your app.
-- band will click the add show button, be taken to the form to add show details
-- when they submit -> the 
+- when a user submits a resource, rails will find the appropriate controller action based on the route, then 
 
 
 
@@ -237,7 +236,7 @@ Project Knowledge Requirements:
 - Activerecord is the gem responsible for these relationships 
 
 7. What macro writes your password + password= methods? 
-- the gem is bcrypt, the macro is has_secure_password
+- the macro is has_secure_password
 - Adds methods to set and authenticate against a BCrypt password. 
 - This mechanism requires you to have a password_digest attribute. Where XXX is the attribute name of your desired password.
 
@@ -250,7 +249,7 @@ Project Knowledge Requirements:
 - since a show belongs to a band, a show is considered a child of that band model -> giving me access to url's such as "/bands/:band_id/shows/new"
 
 10. What are scopes? What is the type of data they take as an argument? What is an identical way to acheive this?
-- Scopes are custom queries that are defined inside Rails models with the scope method. 
+- Scopes are custom queries that are defined inside Rails models to directly access data from the database. 
 - Every scope takes two arguments: A name, which you use to call this scope in your code. A lambda, which implements the query.
 
 11. Describe the authentication process in your app
@@ -269,7 +268,10 @@ Project Knowledge Requirements:
 
 12. How to you protect your resources from users that do not own them? (and from logged out users?)
 
-- require_auth(user) helper method will check if the current user's id == user.account.id 
+- require_auth(user) helper method will check a user object and make sure that the user being evaluated is == to current_user's account information
+- if not, you are shown a 403 error and cannot proceed.
+- if you are logged out and try to access any information, app authenticates before each action in the user, band, and show controllers that redirect you to the login path if you're not logged_in.
+
 
 
 Testing:
