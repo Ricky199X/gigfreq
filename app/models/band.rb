@@ -14,18 +14,7 @@ class Band < ApplicationRecord
     def fan_names
         fans.pluck(:name)
     end
-    # def fans
-    #     users = []
-    #     self.shows.each do |show|
-    #         show.users.each do |user|
-    #             users << user.name
-    #         end
-    #     end
-    #     users.uniq
-
-
-    #     #users = shows.map{|show| show.users.map{|user| user.name}}.flatten.uniq
-
+   
     # end
 
     # helper methods for metrics 
@@ -49,22 +38,6 @@ class Band < ApplicationRecord
         end
         location_count
     end
-
-
-
-    # def tickets_sold
-    #     # has to iterate self's shows
-    #     self.shows.each do |show|
-    #     # then I wanna iterate thru each individual show's users
-    #         show.users.each do |user|
-    #     # then i wanna access the each user's user_shows tickets_bought attribute
-    #             if user.user_shows.include?(self)
-    #     # then i wanna take that integer, add it to a tickets variable 
-    #     # then i wanna return the tickets variable
-    #             end
-    #         end
-    #     end
-    # end
 
     
 end

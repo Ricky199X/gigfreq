@@ -19,14 +19,5 @@ class Show < ApplicationRecord
     def band_name
         self.band.account.username
     end
-
-    # def tickets(account)
-    #     # look at the show, pass it a user
-    #     # see if the user is in the  shows.all collection
-    #     #if the user is in the show's collection
-    #     if self.users.include?(user) 
-    #     return user.user_shows.first.tickets_bought
-    #     end
-    # end
     
 end
