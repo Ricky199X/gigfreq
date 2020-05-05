@@ -15,11 +15,16 @@
  */
 
  body {
-    background-color: blue;
- }
+    background-color: whitesmoke;
+    height: 75rem 
+}
 
-.section medium-buttons {
-    border: 20px solid;
-    background-color: cadetblue;
-    margin-top: 4000px;
+.container {
+    height: 75rem;
+    padding: 50px
+}
+
+section {
+    color: red;
+    border: 5px solid blue;
 }
