@@ -1,3 +1,12 @@
-<button><%= link_to "Sign Up", new_account_path%></button>
-<button><%= link_to "Log In", login_path%></button>
-<button><%= link_to "Log In With Facebook", "/auth/facebook", method: :post%></button>
+
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">GIGFREQ</a>
+            <ul class="left">
+                <li><%= link_to "Sign Up", new_account_path%></li>
+                <li><%= link_to "Log In", login_path%></li>
+                <li><%= link_to "Log In With Facebook", "/auth/facebook", method: :post%></li>
+            </ul>
+    </div>
+</nav>
