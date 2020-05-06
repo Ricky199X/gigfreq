@@ -1,5 +1,15 @@
  <% if current_user.accountable_type == "User" %>
-    <%= render 'layouts/usernav'%>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">GIGFREQ</a>
+                <ul><%= render 'layouts/usernav'%></ul>
+        </div>
+    </nav>
 <% else %>
-    <%= render 'layouts/bandnav'%>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">GIGFREQ</a>
+                <ul><%= render 'layouts/bandnav'%></ul>
+        </div>
+    </nav>
 <%end%>
