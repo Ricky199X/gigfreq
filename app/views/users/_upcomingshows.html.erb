@@ -22,7 +22,7 @@
          <td><%= show.venue%></td>
          <td><%= "#{show.city}, #{show.state}"%></td>
          <td><%=show.date%></td>
-         <td><button><%= link_to "View Show" , show_path(show)%></button></td>
+         <td><button class="waves-effect waves-light btn"><%= link_to "View Show", show_path(show), style: "color: white"%></button></td>
       </tr>
    <%end%>
    </tbody>

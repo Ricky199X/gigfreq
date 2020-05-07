@@ -1,51 +1,50 @@
-<h1><%= "#{@band.name}" + "s" if @band%> Upcoming Shows</h1>
+<div class="container">
+   <h3 class="center"><%= "#{@band.name}" + "s" if @band%> Upcoming Shows</h3>
 
 
-<table class="table">
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+   <table class="centered">
+      <thead>
+         <tr>
+            <th><strong>Artist</strong></th>
+            <th><strong>Venue</strong></th>
+            <th><strong>Location</strong></th>
+            <th><strong>Date</strong></th>
+            <th><strong>Details</strong></th>
+         </tr>
+      </thead>
 
-   <tbody>
-   <tr>
-      <td><strong>Artist</strong></td>
-      <td><strong>Venue</strong></td>
-      <td><strong>Location</strong></td>
-      <td><strong>Date</strong></td>
-      <td><strong>Details</strong></td>
-      
-   </tr>
-   
-   <% @shows.shows_by_date.each do |show| %>
-      <tr>
-      <% if current_user.accountable_type == "Band "%>
-         <td><%= show.band.name%></td>
-         <td><%= show.venue%></td>
-         <td><%= "#{show.city}, #{show.state}"%></td>
-         <td><%= show.date %></td>
-      <%else%>
-         <td><%= show.band.name%></td>
-         <td><%= show.venue%></td>
-         <td><%= "#{show.city}, #{show.state}"%></td>
-         <td><%= show.date %></td>
-      <%end%>
+      <tbody>
+         <% @shows.shows_by_date.each do |show| %>
+            <tr>
+               <% if current_user.accountable_type == "Band "%>
+                  <td><%= show.band.name%></td>
+                  <td><%= show.venue%></td>
+                  <td><%= "#{show.city}, #{show.state}"%></td>
+                  <td><%= show.date %></td>
+               <%else%>
+                  <td><%= show.band.name%></td>
+                  <td><%= show.venue%></td>
+                  <td><%= "#{show.city}, #{show.state}"%></td>
+                  <td><%= show.date %></td>
+               <%end%>
 
-         <% if current_user.accountable_type == "Band" %>
-         <td><button><%= link_to "View #{show.name}" , show_path(show)%></button></td>
-         <%else%>
-         <td><button><%= link_to "See #{show.name}" , show_path(show)%></button></td>
+               <% if current_user.accountable_type == "Band" %>
+               <td><button class="waves-effect waves-light btn"><%= link_to "View #{show.name}" , show_path(show), style: "color: white"%></button></td>
+               <%else%>
+               <td><button class="waves-effect waves-light btn"><%= link_to "See #{show.name}" , show_path(show), style: "color: white"%></button></td>
+               <%end%>
+            </tr>
          <%end%>
-      </tr>
-   <%end%>
-   </tbody>
-</table>
+      </tbody>
+   </table>
 
-<% if current_user.accountable_type == "Band" %>
-   <button><%= link_to "Add a Gig", new_band_show_path(current_user.accountable) %></button>
-   <button><%= link_to "Home", band_path(current_user.accountable)%>
-<%else%>
-   <button><%= link_to "All Shows", shows_path%></button>
-   <button><%= link_to "Back", user_path(current_user.accountable)%>
-<%end%>
+      <section>
+         <% if current_user.accountable_type == "Band" %>
+            <button class="waves-effect waves-light btn"><%= link_to "Add a Gig", new_band_show_path(current_user.accountable), style: "color: white" %></button>
+            <button class="waves-effect waves-light btn"><%= link_to "Home", band_path(current_user.accountable), style: "color: white"%>
+         <%else%>
+            <button class="waves-effect waves-light btn"><%= link_to "All Shows", shows_path, style: "color: white"%></button>
+            <button class="waves-effect waves-light btn"><%= link_to "Back", user_path(current_user.accountable), style: "color: white"%>
+         <%end%>
+      </section>
+</div>
