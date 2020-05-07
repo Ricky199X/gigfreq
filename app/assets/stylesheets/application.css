@@ -40,5 +40,15 @@ section {
     margin-right: 50px;
     margin-left: 50px;
 }
-/* Sign Up Form */
 
+/* Account Page */
+
+.account-container {
+    height: 50rem;
+    margin: 50px;
+}
+
+.account-info {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

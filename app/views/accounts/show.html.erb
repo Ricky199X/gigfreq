@@ -1,26 +1,29 @@
-<h1>Your Account Info:</h1>
+<div class="account-container center">
 
-<div class="w3-container">
-<% if current_user.accountable_type == "Band" %>
-    <p>Name: <%=current_user.username %><p>
-    <p>Website: <%=current_user.accountable.website %></p>
-    <p>Email Address: <%= current_user.email %></p>
-    <p>Genre: <%= current_user.accountable.genre %></p>
-    <p>Description: <%= current_user.accountable.description%></p>
-<% else %>
-    <p>Name: <%=current_user.username %><p>
-    <p>Email Address: <%= current_user.email %></p>
-    <p>City: <%= current_user.accountable.city %></p>
-    <p>State: <%= current_user.accountable.state%></p>
-    <p>Favorite Band: <%= current_user.accountable.favorite_band%></p>
-<%end%>
+    <h3>Your Account Info:</h3>
+
+    <div class="account-info">
+        <% if current_user.accountable_type == "Band" %>
+            <h4><strong>Name:</strong> <%=current_user.username %><h4>
+            <h4><strong>Website:</strong> <%=current_user.accountable.website %></h4>
+            <h4><strong>Email Address:</strong> <%= current_user.email %></h4>
+            <h4><strong>Genre:</strong> <%= current_user.accountable.genre %></h4>
+            <h4><strong>Description:</strong> <%= current_user.accountable.description%></h4>
+        <% else %>
+            <h4><strong>Name:</strong> <%=current_user.username %><h4>
+            <h4><strong>Email Address:</strong> <%= current_user.email %></h4>
+            <h4><strong>City:</strong> <%= current_user.accountable.city %></h4>
+            <h4><strong>State:</strong> <%= current_user.accountable.state%></h4>
+            <h4><strong>Favorite Band:</strong> <%= current_user.accountable.favorite_band%></h4>
+        <%end%>
+   </div>
+
+        <% if current_user.accountable_type == "Band"%>
+            <button class="waves-effect waves-light btn"><%= link_to "Update Band Info", edit_band_path(current_user.accountable.id), style: "color: white"%>
+            <button class="waves-effect waves-light btn"><%= link_to "Back", band_path(current_user.accountable.id), style: "color: white"%>
+        <%else%>
+            <button class="waves-effect waves-light btn"><%= link_to "Update Account", edit_user_path(current_user.accountable.id), style: "color: white"%></button>
+            <button class="waves-effect waves-light btn"><%= link_to "Back", user_path(current_user.accountable.id), style: "color: white"%>
+        <%end%>
+   
 </div>
-
-<% if current_user.accountable_type == "Band"%>
-    <button><%= link_to "Update Band Info", edit_band_path(current_user.accountable.id)%>
-    <button><%= link_to "Back", band_path(current_user.accountable.id)%>
-<%else%>
-    <button><%= link_to "Update Account", edit_user_path(current_user.accountable.id)%></button>
-    <button><%= link_to "Back", user_path(current_user.accountable.id)%>
-<%end%>
-
