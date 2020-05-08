@@ -1,25 +1,28 @@
+<div class="container center">
+   <h4 class="center"><%=@show.name%></h4>
 
-<h1><%=@show.name%></h1>
+   <div class="show info">
+      <h5><strong>Artist Name:</strong> <%=@show.band.name%></h5>
+      <h5><strong>Name:</strong> <%=@show.name%></h5>
+      <h5><strong>Venue:</strong> <%=@show.venue%></h5>
+      <h5><strong>City:</strong> <%=@show.city%></h5>
+      <h5><strong>State:</strong> <%=@show.state%></h5>
+      <h5><strong>Date:</strong> <%=@show.date%></h5>
+      <h5><strong>Total Attendees:</strong> <%=@show.total_users%></h5>
 
-<div class="show info">
-   <p><strong>Artist Name:</strong> <%=@show.band.name%></p>
-   <p><strong>Name:</strong> <%=@show.name%></p>
-   <p><strong>Venue:</strong> <%=@show.venue%></p>
-   <p><strong>City:</strong> <%=@show.city%></p>
-   <p><strong>State:</strong> <%=@show.state%></p>
-   <p><strong>Date:</strong> <%=@show.date%></p>
-   <p><strong>Total Attendees:</strong> <%=@show.total_users%></p>
+   </div>
 
-</div>
-
-<div class = "actions">
-<% if current_user.accountable_type == "Band" %>
-   <button><%= link_to "Edit Show", edit_band_show_path(current_user.accountable) %></button>
-<%else%>
-   <%= form_tag '/attend' do %>
-      <%= hidden_field_tag 'show_id', @show.id %>
-      <p><strong>Select your desired number of tickets: <%= number_field_tag 'tickets_bought',  :in => 1..8 %></strong></p>
-      <%= submit_tag "Attend This Show!" %>
+   <div class = "actions">
+   <% if current_user.accountable_type == "Band" %>
+      <button class="waves-effect waves-light btn"><%= link_to "Edit Show", edit_band_show_path(current_user.accountable), style: "color: white" %></button>
+   <%else%>
+      <%= form_tag '/attend' do %>
+         <%= hidden_field_tag 'show_id', @show.id %>
+         <p><strong>Select your desired number of tickets: <%= number_field_tag 'tickets_bought',  :in => 1..8 %></strong></p>
+         <button class="waves-effect waves-light btn">
+            <%= submit_tag "Attend This Show!", style: "color: white" %>
+         </button>
+      <%end%>
    <%end%>
-<%end%>
+   </div>
 </div>
