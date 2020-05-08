@@ -28,7 +28,6 @@
 section {
     color: red;
     margin: 10px;
-    border: 5px solid blue;
     padding: 20px;
 }
 
@@ -51,4 +50,15 @@ section {
 .account-info {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+select {
+    display: block;
+    width: 200px;
+}
+
+.edit-profile-button {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
 }
