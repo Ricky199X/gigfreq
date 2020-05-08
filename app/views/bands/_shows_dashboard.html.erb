@@ -1,31 +1,25 @@
-<h1>Welcome, <%=current_user.username%>!</h1>
+<h4 class="center">See your upcoming shows below:</h4>
 
-<h2>See your upcoming shows below:</h2>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<table class="centered">
+   <thead>
+      <tr>
+         <th><strong>Name</strong></th>
+         <th><strong>Venue</strong></th>
+         <th><strong>Location</strong></th>
+         <th><strong>Date</strong></th>
+         <th><strong>Details</strong></th>
+      </tr>
+   </thead>
 
    <tbody>
-   <tr>
-      <td><strong>Name</strong></td>
-      <td><strong>Venue</strong></td>
-      <td><strong>Location</strong></td>
-      <td><strong>Date</strong></td>
-      <td><strong>Details</strong></td>
-   </tr>
-   
-   <% current_user.shows.shows_by_date.each do |show| %>
-      <tr>
-         <td><%= show.name%></td>
-         <td><%= show.venue%></td>
-         <td><%= "#{show.city}, #{show.state}"%></td>
-         <td><%= show.date %></td>
-         <td><button><%= link_to "View Gig" , show_path(show)%></button></td>
-      </tr>
-   <%end%>
+      <% current_user.shows.shows_by_date.each do |show| %>
+         <tr>
+            <td><%= show.name%></td>
+            <td><%= show.venue%></td>
+            <td><%= "#{show.city}, #{show.state}"%></td>
+            <td><%= show.date %></td>
+            <td><button class="waves-effect waves-light btn"><%= link_to "View Gig" , show_path(show), style: "color:white" %></button></td>
+         </tr>
+      <%end%>
    </tbody>
 </table>

@@ -19,7 +19,7 @@
    </div>
 
         <% if current_user.accountable_type == "Band"%>
-            <button class="waves-effect waves-light btn"><%= link_to "Update Band Info", edit_band_path(current_user.accountable.id), style: "color: white"%>
+            <button class="waves-effect waves-light btn"><%= link_to "Update Acount", edit_band_path(current_user.accountable.id), style: "color: white"%>
             <button class="waves-effect waves-light btn"><%= link_to "Back", band_path(current_user.accountable.id), style: "color: white"%>
         <%else%>
             <button class="waves-effect waves-light btn"><%= link_to "Update Account", edit_user_path(current_user.accountable.id), style: "color: white"%></button>

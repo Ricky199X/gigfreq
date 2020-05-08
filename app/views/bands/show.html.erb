@@ -1,8 +1,6 @@
-<%= flash[:alert] if flash[:alert] %>
-
-<%= render 'bands/shows_dashboard'%>
-
-
-<button><%= link_to "Logout", logout_path %> </button>
+<div class="container">
+    <%= flash[:alert] if flash[:alert] %>
+    <%= render 'bands/shows_dashboard'%>
+</div>
 
 

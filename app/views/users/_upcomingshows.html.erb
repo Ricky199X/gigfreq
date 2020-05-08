@@ -15,15 +15,15 @@
   </thead>
 
    <tbody>
-   <% current_user.shows.shows_by_date.each do |show| %>
-      <tr>
-         <td><%= show.band_name %></td>
-         <td><%= show.name%></td>
-         <td><%= show.venue%></td>
-         <td><%= "#{show.city}, #{show.state}"%></td>
-         <td><%=show.date%></td>
-         <td><button class="waves-effect waves-light btn"><%= link_to "View Show", show_path(show), style: "color: white"%></button></td>
-      </tr>
-   <%end%>
+      <% current_user.shows.shows_by_date.each do |show| %>
+         <tr>
+            <td><%= show.band_name %></td>
+            <td><%= show.name%></td>
+            <td><%= show.venue%></td>
+            <td><%= "#{show.city}, #{show.state}"%></td>
+            <td><%=show.date%></td>
+            <td><button class="waves-effect waves-light btn"><%= link_to "View Show", show_path(show), style: "color: white"%></button></td>
+         </tr>
+      <%end%>
    </tbody>
 </table>
