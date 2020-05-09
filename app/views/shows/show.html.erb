@@ -19,7 +19,15 @@
       <%else%>
          <%= form_tag '/attend' do %>
             <%= hidden_field_tag 'show_id', @show.id %>
-            <h5><strong>Select your desired number of tickets: <%= number_field_tag 'tickets_bought',  :in => 1..8 %></strong></h5>
+
+               <h5><strong>Select your desired number of tickets:</strong></h5> 
+
+               <div class="ticket-select ">
+                  <%= number_field_tag 'tickets_bought',  :in => 1..8 %>
+               </div>
+
+   
+            
             <button class="waves-effect waves-light btn">
                <%= submit_tag "Attend This Show!", style: "color: white" %>
             </button>

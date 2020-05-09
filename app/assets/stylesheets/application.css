@@ -57,6 +57,15 @@ select {
     width: 200px;
 }
 
+.ticket-select {
+    display: block;
+    width: 200px;
+    margin-left: 375px;
+    margin-bottom: 50px;
+    text-align: center;
+    
+}
+
 .edit-profile-button {
     display: flex;
     justify-content: flex-start;
