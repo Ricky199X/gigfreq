@@ -1,36 +1,41 @@
-<h2>Edit upcoming gig here!</h2>
+<div class="container">
 
-<%= form_for @show do |f| %>
+  <h2 class="center">Edit upcoming gig here!</h2>
 
-  <div class= "field">
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %>
-  </div>
+  <div class="account-info">
+    <%= form_for @show do |f| %>
 
-  <div class="field">
-    <%= f.label :venue %><br />
-    <%= f.text_field :venue%>
-  </div>
+      <div class= "field">
+        <%= f.label :name %><br/>
+        <%= f.text_field :name %>
+      </div>
 
-   <div class= "field">
-    <%= f.label :city %><br/>
-    <%= f.text_field :city %>
-  </div>
+      <div class="field">
+        <%= f.label :venue %><br />
+        <%= f.text_field :venue%>
+      </div>
 
-  <div class= "field">
-    <%= f.label :state %><br/>
-    <%= f.select :state, options_for_select(us_states) %>
-  </div>
+      <div class= "field">
+        <%= f.label :city %><br/>
+        <%= f.text_field :city %>
+      </div>
 
-  <div class= "field">
-    <%= f.label :date %><br/>
-    <%= f.text_field :date%>
-  </div>
+      <div class= "field">
+        <%= f.label :state %><br/>
+        <%= f.select :state, options_for_select(us_states) %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+      <div class= "field">
+        <%= f.label :date %><br/>
+        <%= f.text_field :date%>
+      </div>
 
-  
+      <button class=" edit-profile-button waves-effect waves-light btn">
+        <%= f.submit "Update Gig", style:"color: white" %>
+      </button>
+    </div>
+    
 
-<% end %>
+  <% end %>
+
+</div>
