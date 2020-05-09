@@ -71,3 +71,15 @@ select {
     justify-content: flex-start;
     margin-top: 50px;
 }
+
+.fans {
+    background-color: rgb(217, 224, 243);
+    width: 400px;
+    height: 250px;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-left: 280px;
+    border: 5px solid red;
+    border-radius: 10px;
+}

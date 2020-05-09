@@ -1,21 +1,27 @@
-<h1><%=current_user.username%>'s Stats</h1>
+<div class="container center">
+    <h3><%=current_user.username%>'s Stats</h3>
 
-<div class="stats info">
-   <p><strong>Your Total Shows:</strong> <%=current_user.accountable.total_shows%></p>
-   <p><strong>Your Total Fans:</strong> <%=current_user.accountable.total_fans%></p>
-   <p><strong>Your Total Locations:</strong> <%= current_user.accountable.locations%></p>
-</div>
+    <div class="stats info">
+        <h4><strong>Your Total Shows:</strong> <%=current_user.accountable.total_shows%></h4>
+        <h4><strong>Your Total Fans:</strong> <%=current_user.accountable.total_fans%></h4>
+        <h4><strong>Your Total Locations:</strong> <%= current_user.accountable.locations%></h4>
+    </div>
 
 
-<div class = "fans"> 
-    <p><strong>Your Fans:</strong></p>
-    <% if current_user.accountable.fan_names.empty? %>
-        <p>You don't have any fans (yet) !</p>
-    <%else%>
-    <% current_user.accountable.fan_names.each do |fan| %>
-        <p><%=fan%></p>
+    <div class = "fans center"> 
+        <h4><strong>Your Fans:</strong></h4>
+
+        <% if current_user.accountable.fans.empty? %>
+                <h5>You don't have any fans (yet) !</h5>
+        <%else%>
+                <% current_user.accountable.fans.each do |fan| %>
+                <h5><%=fan.account.username%></h5>
+            <%end%>
         <%end%>
-    <%end%>
-</div>
+    </div>
 
-<button><%= link_to "Home", band_path(current_user.accountable)%>
+    <button class="waves-effect waves-light btn">
+        <%= link_to "Home", band_path(current_user.accountable), style: "color: white"%>
+    </button>
+
+</div>
