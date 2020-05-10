@@ -25,6 +25,7 @@ a {
 }
 
 .container {
+    margin-top: 25px;
     height: 75rem;
     padding: 20px;
 }

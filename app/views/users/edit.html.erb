@@ -18,10 +18,11 @@
         <%= f.text_field :favorite_band %>
       </div>
 
-     
-      <button class=" edit-profile-button waves-effect waves-light btn center">
-        <%= f.submit "Update Your Profile!", style:"color: white" %>
-      </button>
+     <section class="center">
+        <button class="waves-effect waves-light btn center">
+          <%= f.submit "Update Your Profile!", style:"color: white" %>
+        </button>
+      </section>
     <% end %>
 
     <% if @user.errors.any? %>
