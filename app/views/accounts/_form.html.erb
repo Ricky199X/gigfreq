@@ -1,55 +1,59 @@
-<%= form_with model: @account, local: true do |f| %>
 
-  <div class= "field">
-    <%= f.label :username %><br/>
-    <%= f.text_field :username %>
-  </div>
+<section class="form">
+  <h4>Welcome to GigFreq! Please create an account here!</h4>
+  <br>
+  <%= form_with model: @account, local: true do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class= "field">
+      <%= f.label :username %><br/>
+      <%= f.text_field :username %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br/>
-  </div>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-  <div class="permissions">
-    <%= f.label :band, "Check box if you are a band" %>
-    <%= f.check_box :band %><br>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br/>
+    </div>
 
-    <label>
-      <input type="checkbox" />
-      
-      <span>I am in a Band</span>
-    </label>
-  </div>
+    <div class="permissions">
+      <%= f.label :band, "Check box if you are a band" %>
+      <%= f.check_box :band %><br>
 
-  
+      <label>
+        <input type="checkbox" />
+        <span>I am in a Band</span>
+      </label>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+    <section class="center">
+      <button class="btn waves-effect waves-light">
+        <%= f.submit "Sign up", style: "color: white" %>
+      </button>
+    <section class="center">
 
 
-  <div>
-    <% if @user && @user.errors.any? %>
-      <% @user.errors.full_messages.each do |errmsg| %>
-        <p><%= errmsg %></p>
+    <div>
+      <% if @user && @user.errors.any? %>
+        <% @user.errors.full_messages.each do |errmsg| %>
+          <p><%= errmsg %></p>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-<% end %>
+  <% end %>
+</section>
 
  
 

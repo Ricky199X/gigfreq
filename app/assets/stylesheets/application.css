@@ -35,7 +35,7 @@ section {
 }
 
 .form {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .image {
@@ -67,13 +67,15 @@ nav {
 select {
     display: block;
     width: 200px;
+    margin-left: 440px;
+    text-align: center;
 }
 
 
 .ticket-select {
     display: block;
     width: 200px;
-    margin-left: 350px;
+    margin-left: 405px;
     margin-bottom: 20px;
     text-align: center;
     
@@ -102,6 +104,8 @@ textarea {
     border: 1px solid #7A767C;
     background-color: #fdfdfe;
     border-radius: 5px;
+    width: 100px;
+    
 }
 
 table {
@@ -115,4 +119,5 @@ table {
 
 input {
     text-align: center;
+   
 }
