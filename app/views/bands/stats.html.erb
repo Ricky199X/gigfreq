@@ -13,13 +13,14 @@
 
         <% if current_user.accountable.fans.empty? %>
                 <h5>You don't have any fans (yet) !</h5>
-        <%else%>
+            <%else%>
                 <% current_user.accountable.fans.each do |fan| %>
                 <h5><%=fan.account.username%></h5>
             <%end%>
         <%end%>
     </div>
 
+    
     <button class="waves-effect waves-light btn">
         <%= link_to "Home", band_path(current_user.accountable), style: "color: white"%>
     </button>
