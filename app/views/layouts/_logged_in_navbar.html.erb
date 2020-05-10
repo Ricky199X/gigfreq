@@ -1,7 +1,7 @@
  <% if current_user.accountable_type == "User" %>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">GigFreq</a>
+            <a href="#" class="brand-logo center"><%= image_tag("cover.png", size: "200x63") %></a>
             <a class="brand-logo right hide-on-med-and-down"><%=current_user.username%></a>
                 <ul class="hide-on-med-and-down"><%= render 'layouts/usernav'%></ul>
         </div>
@@ -9,7 +9,7 @@
 <% else %>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">GIGFREQ</a>
+            <a href="#" class="brand-logo center"><%= image_tag("cover.png", size: "200x63") %></a>
             <a class="brand-logo right"><%=current_user.username%></a>
                 <ul class="hide-on-med-and-down"><%= render 'layouts/bandnav'%></ul>
         </div>
