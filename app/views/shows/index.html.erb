@@ -1,7 +1,6 @@
 <div class="container">
    <h3 class="center"><%= "#{@band.name}" + "s" if @band%> Upcoming Shows</h3>
 
-
    <table class="centered">
       <thead>
          <tr>
@@ -38,13 +37,13 @@
       </tbody>
    </table>
 
-      <section class="center">
-         <% if current_user.accountable_type == "Band" %>
-            <button class="waves-effect waves-light btn"><%= link_to "Add a Gig", new_band_show_path(current_user.accountable), style: "color: white" %></button>
-            <button class="waves-effect waves-light btn"><%= link_to "Home", band_path(current_user.accountable), style: "color: white"%>
-         <%else%>
-            <button class="waves-effect waves-light btn"><%= link_to "All Shows", shows_path, style: "color: white"%></button>
-            <button class="waves-effect waves-light btn"><%= link_to "Back", user_path(current_user.accountable), style: "color: white"%>
-         <%end%>
-      </section>
+   <section class="center">
+      <% if current_user.accountable_type == "Band" %>
+         <button class="waves-effect waves-light btn"><%= link_to "Add a Gig", new_band_show_path(current_user.accountable), style: "color: white" %></button>
+         <button class="waves-effect waves-light btn"><%= link_to "Home", band_path(current_user.accountable), style: "color: white"%>
+      <%else%>
+         <button class="waves-effect waves-light btn"><%= link_to "All Shows", shows_path, style: "color: white"%></button>
+         <button class="waves-effect waves-light btn"><%= link_to "Back", user_path(current_user.accountable), style: "color: white"%>
+      <%end%>
+   </section>
 </div>
