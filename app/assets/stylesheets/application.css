@@ -79,20 +79,21 @@ select {
 }
 
 .fans {
-    background-color: #D6DBE6;
+    background-color: #fdfdfe;
     width: 400px;
     height: 250px;
     display: block;
     margin-top: 50px;
     margin-bottom: 30px;
     margin-left: 280px;
-    border: 2px solid #403D41;
+    border: 2px solid #7A767C;
     border-radius: 10px;
 }
 
 textarea {
     height: 100px;
-    border: 2px solid rgb(190, 186, 186);
+    border: 1px solid #7A767C;
+    background-color: #fdfdfe;
     border-radius: 5px;
 }
 
@@ -101,6 +102,7 @@ table {
     font-size: larger;
 }
 
-button {
-    background-color: #403D41
+.btn  {
+    background-color: #1a1a1a;
 }
+
