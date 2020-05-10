@@ -15,11 +15,9 @@
 
    <section class="center">
       <% if current_user.accountable_type == "Band" %>
-      
-            <button class="waves-effect waves-light btn">
-               <%= link_to "Edit Show", edit_band_show_path(current_user.accountable), style: "color: white" %>
-            </button>
-
+         <button class="waves-effect waves-light btn">
+            <%= link_to "Edit Show", edit_band_show_path(current_user.accountable), style: "color: white" %>
+         </button>
       <%else%>
          <%= form_tag '/attend' do %>
             <%= hidden_field_tag 'show_id', @show.id %>

@@ -20,13 +20,17 @@
     height: 75rem 
 }
 
+a {
+    -webkit-text-stroke: 0.5px #B9EDF7
+}
+
 .container {
     height: 75rem;
     padding: 20px;
 }
 
 section {
-    color: red;
+    
     margin: 10px;
     padding: 20px;
 }
@@ -66,7 +70,7 @@ select {
 .ticket-select {
     display: block;
     width: 200px;
-    margin-left: 375px;
+    margin-left: 350px;
     margin-bottom: 20px;
     text-align: center;
     
@@ -106,3 +110,6 @@ table {
     background-color: #1a1a1a;
 }
 
+input {
+    text-align: center;
+}
