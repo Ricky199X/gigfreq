@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container center">
 
   <h2 class="center">Edit upcoming gig here!</h2>
 
-  <div class="account-info">
+  <div class="account-info ">
     <%= form_for @show do |f| %>
 
       <div class= "field">
@@ -29,10 +29,13 @@
         <%= f.label :date %><br/>
         <%= f.text_field :date%>
       </div>
-      
-      <button class=" edit-profile-button waves-effect waves-light btn">
-        <%= f.submit "Update Gig", style:"color: white" %>
-      </button>
+   
+      <section class="center">
+        <button class="waves-effect waves-light btn">
+          <%= f.submit "Update Gig", style:"color: white" %>
+        </button>
+      </section>
+
     </div>
     
 
