@@ -1,38 +1,40 @@
-<div class="container">
+<div class="container center">
   <h2 class="center">Enter an upcoming gig here!</h2>
 
-  <%= form_with model: @show, url: [@band, @show]  do |f| %>
+  <div class="form">
+    <%= form_with model: @show, url: [@band, @show]  do |f| %>
 
-    <div class= "field">
-      <%= f.label :name %><br/>
-      <%= f.text_field :name %>
-    </div>
+      <div class= "field">
+        <%= f.label :name %><br/>
+        <%= f.text_field :name %>
+      </div>
 
-    <div class="field">
-      <%= f.label :venue %><br />
-      <%= f.text_field :venue%>
-    </div>
+      <div class="field">
+        <%= f.label :venue %><br />
+        <%= f.text_field :venue%>
+      </div>
 
-    <div class= "field">
-      <%= f.label :city %><br/>
-      <%= f.text_field :city %>
-    </div>
+      <div class= "field">
+        <%= f.label :city %><br/>
+        <%= f.text_field :city %>
+      </div>
 
-    <div class= "field">
-      <%= f.label :state %><br/>
-      <%= f.select :state, options_for_select(us_states) %>
-    </div>
+      <div class= "field">
+        <%= f.label :state %><br/>
+        <%= f.select :state, options_for_select(us_states) %>
+      </div>
 
-    <div class= "field">
-      <%= f.label :date %><br/>
-      <%= f.date_field :date%>
-    </div>
+      <div class= "field">
+        <%= f.label :date %><br/>
+        <%= f.date_field :date%>
+      </div>
 
-    <div class="section center">
-      <button class="waves-effect waves-light btn">
-        <%= f.submit "Add Gig", style: "color: white" %>
-      </button>
-    </div>
+      <div class="section center">
+        <button class="waves-effect waves-light btn">
+          <%= f.submit "Add Gig", style: "color: white" %>
+        </button>
+      </div>
 
-  <% end %>
+    <% end %>
+  </div>
 </div>
