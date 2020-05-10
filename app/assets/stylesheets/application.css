@@ -17,7 +17,7 @@
 /* Welcome Page */
  body {
     background-color: #edF2F4;
-    height: 75rem 
+    height: 65rem 
 }
 
 a {
@@ -30,9 +30,12 @@ a {
 }
 
 section {
-    
     margin: 10px;
     padding: 20px;
+}
+
+.form {
+    margin-top: 40px;
 }
 
 .image {
