@@ -16,7 +16,7 @@
 
 /* Welcome Page */
  body {
-    background-color: whitesmoke;
+    background-color: #edF2F4;
     height: 75rem 
 }
 
@@ -35,9 +35,14 @@ section {
     border: 5px solid black
 }
 
+nav {
+    background-color: #1a1a1a;
+}
+
 .nav-wrapper {
     margin-right: 50px;
     margin-left: 50px;
+    background-color: #1a1a1a;
 }
 
 /* Account Page */
@@ -74,14 +79,14 @@ select {
 }
 
 .fans {
-    background-color: rgb(217, 224, 243);
+    background-color: #D6DBE6;
     width: 400px;
     height: 250px;
     display: block;
     margin-top: 50px;
     margin-bottom: 30px;
     margin-left: 280px;
-    border: 5px solid red;
+    border: 2px solid #403D41;
     border-radius: 10px;
 }
 
@@ -96,3 +101,6 @@ table {
     font-size: larger;
 }
 
+button {
+    background-color: #403D41
+}
