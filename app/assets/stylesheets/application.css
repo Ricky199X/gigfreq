@@ -26,8 +26,10 @@ a {
 
 .container {
     margin-top: 25px;
-    height: 75rem;
+    height: 48rem;
     padding: 20px;
+    background-color: white;
+    overflow: auto
 }
 
 section {
