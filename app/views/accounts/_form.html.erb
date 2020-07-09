@@ -1,5 +1,5 @@
 
-<section class="form">
+
   <h4>Welcome to GigFreq! Please create an account here!</h4>
   <br>
   <%= form_with model: @account, local: true do |f| %>
@@ -27,14 +27,15 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br/>
     </div>
 
-    <div class="permissions">
-      <%= f.label :band, "Check box if you are a band" %>
-      <%= f.check_box :band %><br>
-
-      <label>
-        <input type="checkbox" />
-        <span>I am in a Band</span>
-      </label>
+    <div class="field">
+  
+      <div class="field">
+        <label>
+          <%= f.check_box :band, id:"band" %>
+          <span>Band?</span>
+        </label>
+      </div>
+    
     </div>
 
     <section class="center">
@@ -53,7 +54,7 @@
     </div>
 
   <% end %>
-</section>
+
 
  
 

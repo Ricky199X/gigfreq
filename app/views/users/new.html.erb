@@ -1,30 +1,35 @@
-<h2>Welcome to GigFreq! Please sign up here!</h2>
+<section class ="form">
+  <h2>Welcome to GigFreq! Please sign up here!</h2>
 
-<%= form_for @user do |f| %>
+  <%= form_for @user do |f| %>
 
-  <div class= "field">
-    <%= f.label :city %><br/>
-    <%= f.text_field :city %>
-  </div>
+    <div class= "field">
+      <%= f.label :city %><br/>
+      <%= f.text_field :city %>
+    </div>
 
-   <div class= "field">
-    <%= f.label :state %><br/>
-    <%= f.select :state, options_for_select(us_states) %>
-  </div>
+    <div class= "field">
+      <%= f.label :state %><br/>
+      <%= f.select :state, options_for_select(us_states) %>
+    </div>
 
-  <div class= "field">
-    <%= f.label :favorite_band %><br/>
-    <%= f.text_field :favorite_band %>
-  </div>
+    <div class= "field">
+      <%= f.label :favorite_band %><br/>
+      <%= f.text_field :favorite_band %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+    <section class="center">
+      <button class="btn waves-effect waves-light">
+        <%= f.submit "Finish Sign Up", style: "color: white" %>
+      </button>
+    <section class="center">
 
-<% end %>
+  <% end %>
 
-<% if @user.errors.any? %>
-  <%@user.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
+  <% if @user.errors.any? %>
+    <%@user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <%end%>
   <%end%>
-<%end%>
+
+</section>

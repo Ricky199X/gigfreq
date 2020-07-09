@@ -34,6 +34,9 @@ gem 'dotenv-rails'
 
 gem 'pry'
 
+gem 'dogstatsd-ruby'
+gem 'ddtrace'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
